@@ -4,19 +4,25 @@ All notable changes to the `pkgi-ps3` project will be documented in this file. T
 
 ## [Unreleased]()
 
+## [v1.2.2.1](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.2.1) - 2021-11-26
+
+### Added
+
+* Русский перевод
+
 ## [v1.2.2](https://github.com/bucanero/pkgi-ps3/releases/tag/v1.2.2) - 2021-10-22
 
 ### Added
 
-* Migrated all networking code to `libcurl`
-* Support for HTTP, HTTPS, FTP, FTPS links with TLS v1.2
-* Finnish translation
-* French translation
-* German translation
-* Italian translation
-* Polish translation
-* Portuguese translation
-* Turkish translation
+* Перенос всего сетевого кода в libcurl
+* Поддержка ссылок HTTP, HTTPS, FTP, FTPS с TLS v1.2
+* Финский перевод
+* Французский перевод
+* Немецкий перевод
+* Итальянский перевод
+* Польский перевод
+* Португальский перевод
+* Турецкий перевод
 
 ### Fixed
 
@@ -26,12 +32,101 @@ All notable changes to the `pkgi-ps3` project will be documented in this file. T
 
 ### Added
 
-* Internationalization support
-* Language detection based on PS3 settings
-* Spanish translation
-* Online scan for available content updates
-* Support for TLS v1.2 using newer libcurl+polarSSL
-* UI: use customized dialogs
+* Мультиязыковая поддержка
+* Определение языка на основе настроек PS3
+* Испанский перевод
+* Онлайн-сканирование доступных обновлений контента
+* Поддержка TLS v1.2 с использованием более новой версии libcurl + polarSSL
+* UI: использование настраиваемых диалогов
+
+## [v1.1.9.0](https://github.com/nikolaevich23/pkgi/releases/tag/v1.1.9.0) - 2021-11-17
+
+### Changed
+
+* Добавлена иконка бэкграунда PIC1.PNG.
+* Пополнена и поправлена база игр.
+
+* Особая благодарность 'PluSan' за облачное хранилище и списков для Themes и miniS.
+* Особая благодарность 'Serp87' за поддержку и пополнение базы читов.
+* Особая благодарность 'Z0rdan' за старт составления баз PS1 и PS2 игр.
+* Особая благодарность 'PluSan' и 'max_maysky' за составление базы русских игр.
+
+## [v1.1.8.713](https://github.com/nikolaevich23/pkgi/releases/tag/v1.1.8.713) - 2021-10-05
+
+### Changed
+
+* Составлен список Themes, работающих даже на OFW при включении консоли.
+
+* Особая благодарность 'PluSan' за облачное хранилище и списков для Themes и miniS.
+* Особая благодарность 'Serp87' за поддержку и пополнение базы читов.
+* Особая благодарность 'Z0rdan' за старт составления баз PS1 и PS2 игр.
+* Особая благодарность 'PluSan' и 'max_maysky' за составление базы русских игр.
+
+## [v1.1.8.712](https://github.com/nikolaevich23/pkgi/releases/tag/v1.1.8.712) - 2021-10-04
+
+### Changed
+
+* Составлен список miniS и добавлена категория "miniS для PS3".
+* В главном меню столбик регионов заменён на тип контента.
+* В окне "Детали", по кнопке [], добавлена информация о регионе и типе контента.
+* Прочие мелкие правки в коде и пополнение баз игр.
+
+* Особая благодарность 'Serp87' за поддержку и пополнение базы читов.
+* Особая благодарность 'Z0rdan' за старт составления баз PS1 и PS2 игр.
+* Особая благодарность 'PluSan' и 'max_maysky' за составление базы русских игр.
+
+## [v1.1.8.6](https://github.com/nikolaevich23/pkgi/releases/tag/v1.1.8.6) - 2021-08-21
+
+### Changed
+
+* Добавлена новая категория "Игры PS2 для PS3".
+* Добавлена новая категория "Игры PS1 для PS3".
+* Пополнена база читов до 500 шт.
+* Прочие мелкие правки в коде и пополнения баз игр.
+
+* Особая благодарность 'Serp87' за поддержку и пополнение базы читов.
+* Особая благодарность 'Z0rdan' за старт составления баз PS1 и PS2 игр.
+* Особая благодарность 'PluSan' и 'max_maysky' за составление базы русских игр.
+
+## [v1.1.8.5](https://github.com/nikolaevich23/pkgi/releases/tag/v1.1.8.5) - 2021-03-05
+
+### Changed
+
+* Добавлена мелодия SND0.AT3 чтобы не было скучно.
+* Пополнена база читов до 476 штук.
+* Пополнена база "Игры на русском" полностью, практически на 99,9% из имеющихся в PSN.
+
+* Особая благодарность 'Serp87' за поддержку и наполнение базы читов.
+* Особая благодарность 'PluSan' и 'max_maysky' за составление базы русских игр!
+
+## [v1.1.8.4](https://github.com/nikolaevich23/pkgi/releases/tag/v1.1.8.4) - 2021-01-29
+
+### Changed
+
+* Изменена иконка программы ICON0.PNG.
+* Изменён бэкграунд в программе jpg на background.png.
+* Пополнена база читов до 460 штук.
+
+## [v1.1.8.3](https://github.com/nikolaevich23/pkgi/releases/tag/v1.1.8.3) - 2021-01-11
+
+### Changed
+
+* Программа перемещена в меню "Network".
+* Добавлена база читов.
+
+## [v1.1.8.2](https://github.com/nikolaevich23/pkgi/releases/tag/v1.1.8.2) - 2021-01-07
+
+### Changed
+
+### Fixed
+
+* Исправлено отображение регионов вместо знаков "???".
+
+## [v1.1.8.1](https://github.com/nikolaevich23/pkgi/releases/tag/v1.1.8.1) - 2020-12-26
+
+### Changed
+
+* Стартовая русская версия
 
 ## [v1.1.8](https://github.com/bucanero/pkgi-ps3/releases/tag/v1.1.8) - 2020-12-08
 

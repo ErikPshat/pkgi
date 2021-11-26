@@ -221,14 +221,18 @@ const char* pkgi_content_tag(ContentType content)
     switch (content)
     {
     case ContentGame: return "_games";
+    case ContentRUS: return "_russian";
+    case ContentPS2: return "_ps2";
+    case ContentPS1: return "_ps1";
+    case ContentMinis: return "_minis";
     case ContentDLC: return "_dlcs";
     case ContentTheme: return "_themes";
     case ContentAvatar: return "_avatars";
     case ContentDemo: return "_demos";
-    case ContentUpdate: return "_updates";
-    case ContentEmulator: return "_emulators";
+    case ContentManager: return "_managers";
     case ContentApp: return "_apps";
-    case ContentTool: return "_tools";
+    case ContentCheat: return "_cheats";
+    case ContentUpdate: return "_updates";
     default: return "";
     }
 }

@@ -222,17 +222,21 @@ static const char* content_type_str(ContentType content)
 {
     switch (content)
     {
-        case 0: return _("All");
-        case ContentGame: return _("Games");
-        case ContentDLC: return _("DLCs");
-        case ContentTheme: return _("Themes");
-        case ContentAvatar: return _("Avatars");
-        case ContentDemo: return _("Demos");
-        case ContentUpdate: return _("Updates");
-        case ContentEmulator: return _("Emulators");
-        case ContentApp: return _("Apps");
-        case ContentTool: return _("Tools");
-        default: return _("Unknown");
+		case 0: return _("All");
+		case ContentGame: return _("Games");
+		case ContentRUS: return _("RUS");
+		case ContentPS2: return _("PS2");
+		case ContentPS1: return _("PS1");
+		case ContentMinis: return _("miniS");
+		case ContentDLC: return _("DLCs");
+		case ContentTheme: return _("Themes");
+		case ContentAvatar: return _("Avatars");
+		case ContentDemo: return _("Demos");
+		case ContentManager: return _("Managers");
+		case ContentApp: return _("Apps");
+		case ContentCheat: return _("Cheats");
+		case ContentUpdate: return _("Updates");
+		default: return _("Unknown");
     }
 }
 
@@ -264,13 +268,13 @@ static void pkgi_do_main(pkgi_input* input)
         if (input->active & pkgi_cancel_button())
         {
             input->pressed &= ~pkgi_cancel_button();
-            pkgi_dialog_ok_cancel("\xE2\x98\x85  PKGi PS3 v" PKGI_VERSION "  \xE2\x98\x85", _("Exit to XMB?"), &cb_dialog_exit);
+            pkgi_dialog_ok_cancel("\xE2\x98\x85  PKGi PS3 RUS MOD v" PKGI_VERSION "  \xE2\x98\x85", _("Exit to XMB?"), &cb_dialog_exit);
         }
 
         if (input->active & PKGI_BUTTON_SELECT)
         {
             input->pressed &= ~PKGI_BUTTON_SELECT;
-            pkgi_dialog_message("\xE2\x98\x85  PKGi PS3 v" PKGI_VERSION "  \xE2\x98\x85",
+            pkgi_dialog_message("\xE2\x98\x85  PKGi PS3 RUS MOD v" PKGI_VERSION "  \xE2\x98\x85",
                                 "             PlayStation 3 version by Bucanero\n\n"
                                 "            original PS Vita version by mmozeiko");
         }
@@ -533,13 +537,13 @@ static void pkgi_do_refresh(void)
 static void pkgi_do_head(void)
 {
     char title[256];
-    pkgi_snprintf(title, sizeof(title), "PKGi PS3 v%s - %s", PKGI_VERSION, content_type_str(config.content));
+    pkgi_snprintf(title, sizeof(title), "PKGi PS3 RUS MOD v%s - %s", PKGI_VERSION, content_type_str(config.content));
     pkgi_draw_text(0, 0, PKGI_COLOR_TEXT_HEAD, title);
 
     pkgi_draw_fill_rect(0, font_height, VITA_WIDTH, PKGI_MAIN_HLINE_HEIGHT, PKGI_COLOR_HLINE);
 
     char battery[256];
-    pkgi_snprintf(battery, sizeof(battery), "CPU: %u""\xf8""C RSX: %u""\xf8""C", pkgi_get_temperature(0), pkgi_get_temperature(1));
+    pkgi_snprintf(battery, sizeof(battery), "CPU: %u""\xa9""C RSX: %u""\xa9""C", pkgi_get_temperature(0), pkgi_get_temperature(1));
 
     uint32_t color;
     if (pkgi_temperature_is_high())

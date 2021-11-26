@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-#define MAX_CONTENT_TYPES 10
+#define MAX_CONTENT_TYPES 14
 
 typedef enum {
     PresenceUnknown,
@@ -34,32 +34,39 @@ typedef enum {
     DbFilterMissing   = 0x20,
 
     DbFilterContentGame     = 0x000100,
-    DbFilterContentDLC      = 0x000200,
-    DbFilterContentTheme    = 0x000400,
-    DbFilterContentAvatar   = 0x000800,
-    DbFilterContentDemo     = 0x001000,
-    DbFilterContentUpdate   = 0x002000,
-    DbFilterContentEmulator = 0x004000,
-    DbFilterContentApp      = 0x008000,
-    DbFilterContentTool     = 0x010000,
+    DbFilterContentRUS	    = 0x000200,
+    DbFilterContentPS2	    = 0x000400,
+    DbFilterContentPS1	    = 0x000800,
+    DbFilterContentMinis    = 0x001000,
+    DbFilterContentDLC      = 0x002000,
+    DbFilterContentTheme    = 0x004000,
+    DbFilterContentAvatar   = 0x008000,
+    DbFilterContentDemo     = 0x010000,
+    DbFilterContentManager  = 0x020000,
+    DbFilterContentApp      = 0x040000,
+    DbFilterContentCheat    = 0x080000,
+    DbFilterContentUpdate   = 0x100000,
 
     DbFilterAllRegions = DbFilterRegionUSA | DbFilterRegionEUR | DbFilterRegionJPN | DbFilterRegionASA,
-    DbFilterAllContent = DbFilterContentGame | DbFilterContentDLC | DbFilterContentTheme | DbFilterContentAvatar | 
-                         DbFilterContentDemo | DbFilterContentUpdate | DbFilterContentEmulator | DbFilterContentApp | DbFilterContentTool,
+    DbFilterAllContent = DbFilterContentGame | DbFilterContentRUS | DbFilterContentPS2 | DbFilterContentPS1 | DbFilterContentMinis | DbFilterContentDLC | DbFilterContentTheme | DbFilterContentAvatar | DbFilterContentDemo | DbFilterContentManager | DbFilterContentApp | DbFilterContentCheat | DbFilterContentUpdate,
     DbFilterAll = DbFilterAllRegions | DbFilterAllContent | DbFilterInstalled | DbFilterMissing,
 } DbFilter;
 
 typedef enum {
     ContentUnknown,
     ContentGame,
+    ContentRUS,
+    ContentPS2,
+    ContentPS1,
+    ContentMinis,
     ContentDLC,
     ContentTheme,
     ContentAvatar,
     ContentDemo,
-    ContentUpdate,
-    ContentEmulator,
+    ContentManager,
     ContentApp,
-    ContentTool
+    ContentCheat,
+    ContentUpdate,
 } ContentType;
 
 typedef struct {

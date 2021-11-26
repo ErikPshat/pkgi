@@ -408,14 +408,18 @@ static int matches(GameRegion region, ContentType content, uint32_t filter)
         || (region == RegionUnknown))
 
         && ((content == ContentGame && (filter & DbFilterContentGame))
+        || (content == ContentRUS && (filter & DbFilterContentRUS))
+        || (content == ContentPS2 && (filter & DbFilterContentPS2))
+        || (content == ContentPS1 && (filter & DbFilterContentPS1))
+        || (content == ContentMinis && (filter & DbFilterContentMinis))
         || (content == ContentDLC && (filter & DbFilterContentDLC))
         || (content == ContentTheme && (filter & DbFilterContentTheme))
         || (content == ContentAvatar && (filter & DbFilterContentAvatar))
         || (content == ContentDemo && (filter & DbFilterContentDemo))
-        || (content == ContentUpdate && (filter & DbFilterContentUpdate))
-        || (content == ContentEmulator && (filter & DbFilterContentEmulator))
+        || (content == ContentManager && (filter & DbFilterContentManager))
         || (content == ContentApp && (filter & DbFilterContentApp))
-        || (content == ContentTool && (filter & DbFilterContentTool))
+        || (content == ContentCheat && (filter & DbFilterContentCheat))
+        || (content == ContentUpdate && (filter & DbFilterContentUpdate))
         || (content == ContentUnknown));
 }
 
@@ -577,8 +581,9 @@ DbItem* pkgi_db_get(uint32_t index)
 
 GameRegion pkgi_get_region(const char* content)
 {
-    switch (content[0])
+    switch (content[9])
     {
+    case 'A':
     case 'K':
     case 'H':
         return RegionASA;
@@ -591,10 +596,27 @@ GameRegion pkgi_get_region(const char* content)
 
     case 'U':
         return RegionUSA;
+	}
 
-    default:
-        return RegionUnknown;
-    }
+	switch (content[0])
+	{
+	case 'A':
+	case 'K':
+	case 'H':
+		return RegionASA;
+
+	case 'E':
+		return RegionEUR;
+
+	case 'J':
+		return RegionJPN;
+
+	case 'U':
+		return RegionUSA;
+
+	default:
+		return RegionUnknown;
+	}
 }
 
 ContentType pkgi_get_content_type(uint32_t content)

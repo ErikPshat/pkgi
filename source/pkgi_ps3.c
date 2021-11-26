@@ -1051,22 +1051,22 @@ void pkgi_draw_text_z(int x, int y, int z, uint32_t color, const char* text)
                 j += PKGI_FONT_HEIGHT;
                 text++;
                 continue;
-            case '\xfa':
+            case '\xaa':
                 pkgi_draw_texture_z(tex_buttons.circle, i, j, z, 0.5f);
                 i += PKGI_FONT_WIDTH;
                 text++;
                 continue;
-            case '\xfb':
+            case '\xab':
                 pkgi_draw_texture_z(tex_buttons.cross, i, j, z, 0.5f);
                 i += PKGI_FONT_WIDTH;
                 text++;
                 continue;
-            case '\xfc':
+            case '\xac':
                 pkgi_draw_texture_z(tex_buttons.triangle, i, j, z, 0.5f);
                 i += PKGI_FONT_WIDTH;
                 text++;
                 continue;
-            case '\xfd':
+            case '\xad':
                 pkgi_draw_texture_z(tex_buttons.square, i, j, z, 0.5f);
                 i += PKGI_FONT_WIDTH;
                 text++;

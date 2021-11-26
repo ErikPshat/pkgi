@@ -1,74 +1,79 @@
-# PKGi PS3
+# PKGi PS3 RUS MOD
 
 [![Downloads][img_downloads]][pkgi_downloads] [![Release][img_latest]][pkgi_latest] [![License][img_license]][pkgi_license]
 
 
-**PKGi PS3** is a PlayStation 3 port of [pkgi (PSVita)](https://github.com/mmozeiko/pkgi).
+**PKGi PS3** это порт для PlayStation 3 от PSVita [pkgi](https://github.com/mmozeiko/pkgi).
 
-The `pkgi-ps3` homebrew app allows to download and install `.pkg` files directly on your PS3.
+Хоумбрю приложение `pkgi-ps3` позволяет загружать и устанавливать файлы `.pkg` прямо на вашу PS3.
 
-![image](https://user-images.githubusercontent.com/1153055/71187586-1acaf400-225e-11ea-9531-b18af20be10d.png)
+![image](https://i5.imageban.ru/out/2021/08/21/82395e1ac4855d8108e23a7c2424a24e.jpg)
 
-**Comments, ideas, suggestions?** You can contact [me](https://github.com/bucanero/) on [Twitter](https://twitter.com/dparrino) and on [my website](http://www.bucanero.com.ar/).
+**Комментарии, идеи, предложения?** Вы можете отписаться [me](https://github.com/ErikPshat/) всегда в теме [my website](https://www.pspx.ru/forum/showthread.php?t=110158).
 
-# Features
+# Особенности
 
-* **easy to use:** list available downloads, including searching, filtering, and sorting.
-* **standalone:** no PC required, everything happens directly on the PS3.
-* **automatic downloads:** just choose an item, and it will be downloaded by the app to your HDD (`direct mode`) or queued for background download (`background mode`) using the internal Download Manager.
-* **resumes interrupted downloads:** you can stop a download at any time, switch applications, and come back to resume the download later.
-* **content activation:** the app can generate `.rif` files for downloaded content (system must be activated)
-* **content updates:** the app can check online for available content updates
-* **localization support:** Finnish, French, German, Italian, Polish, Portuguese, Spanish, Turkish
+* **лёгок в использовании** список доступных загрузок, включая поиск, фильтрацию и сортировку.
+* **автономный:** ПК не требуется, все происходит прямо на PS3.
+* **автоматические загрузки:** просто выберите элемент, и он будет загружен приложением на ваш жесткий диск (`прямая загрузка`) или поставлен в очередь (`фоновая загрузка`) с помощью внутреннего диспетчера загрузки.
+* **возобновляет прерванные загрузки:** вы можете остановить загрузку в любое время, переключать приложения и вернуться позже, чтобы возобновить загрузку.
+* **активация контента:** приложение может генерировать файлы `.rif` для загруженного контента (система должна быть активирована)
 
-### Notes:
-* **queuing** up multiple downloads is only supported when using `background download` mode.
-* **background download tasks** will only show up after rebooting your PS3.
+### Примечания:
+* **постановка в очередь** загрузка нескольких игр поддерживается только при использовании режима `фоновая загрузка`.
+* **фоновые задачи загрузки** появится только после перезагрузки PS3.
 
-# Download
+# Скачать
 
-Get the [latest version here][pkgi_latest].
+Получить [latest version here][pkgi_latest].
 
-### Changelog
+### Журнал изменений
 
-See the [latest changes here](CHANGELOG.md).
+Смотрите [latest changes here](CHANGELOG.md).
 
-# Setup instructions
+# Инструкция по установке
 
-You need to create a [`pkgi.txt`](#sample-db-file) file in `/dev_hdd0/game/NP00PKGI3/USRDIR` that contains the items available for installation.
-The text database format is user customizable. Check [this section](#user-defined-db-format) to learn how to define your own custom DB format.
+Вам необходимо создать файл `pkgi.txt` в каталоге `/dev_hdd0/game/NP00PKGI3/USRDIR`, содержащий элементы, доступные для установки.
+Формат текстовой базы данных настраивается пользователем. Проверьте [this section](#user-defined-db-format), чтобы узнать, как определить свой собственный формат базы данных.
 
-## Multiple databases
+## Несколько баз данных
 
-You can also load additional database files:
+Вы можете загружать дополнительные файлы базы данных:
 
-- `pkgi_games.txt`
-- `pkgi_dlcs.txt`
-- `pkgi_themes.txt`
-- `pkgi_avatars.txt`
-- `pkgi_demos.txt`
-- `pkgi_updates.txt`
-- `pkgi_emulators.txt`
 - `pkgi_apps.txt`
-- `pkgi_tools.txt`
+- `pkgi_avatars.txt`
+- `pkgi_cheats.txt`
+- `pkgi_demos.txt`
+- `pkgi_dlcs.txt`
+- `pkgi_games.txt`
+- `pkgi_managers.txt`
+- `pkgi_minis.txt`
+- `pkgi_ps1.txt`
+- `pkgi_ps2.txt`
+- `pkgi_russian.txt`
+- `pkgi_themes.txt`
+- `pkgi_updates.txt`
 
-Items on each of these files will be auto-categorized to the file content type. **Note:** The app assumes that every database file has the same format, as defined in `dbformat.txt`.
+Элементы каждого из этих файлов будут автоматически классифицированы по типу содержимого файла. **Примечание:** Приложение предполагает, что каждый файл базы данных имеет один и тот же формат, как определено в `dbformat.txt`.
 
 ## Online DB update
 
-You can refresh and sync an online database by adding the DB URL(s) to the `config.txt` file in `/dev_hdd0/game/NP00PKGI3/USRDIR`. 
+Вы можете обновить и синхронизировать онлайн-базу данных, добавив БД URL-адреса в файл `config.txt` по пути `/dev_hdd0/game/NP00PKGI3/USRDIR`. 
 
-For example:
+Для примера:
 
 ```
 url http://www.mysite.com/mylist.csv
-url_demos http://www.demos.com/otherlist.csv
+url_managers http://www.myapp.com/managers.csv
 url_emulators http://www.example.com/emulators.csv
 ```
 
-Using this setup, `pkgi.txt` will be updated with `mylist.csv`, `pgi_demos.txt` with `otherlist.csv` , and `pkgi_emulators.txt` with `emulators.csv`.
+При настройках в данном примере выше:
+* `pkgi.txt` будет обновлён из `mylist.csv`
+* `pkgi_managers.txt` будет обновлён из `managers.csv`
+* `pkgi_emulators.txt` будет обновлён из `emulators.csv`
 
-Next time you open the app, you'll have an additional menu option ![Triangle](https://github.com/bucanero/pkgi-ps3/raw/master/data/TRIANGLE.png) called **Refresh**. When you select it, the local databases will be syncronized with the defined URLs.
+Когда вы откроете приложение в следующий раз, у вас будет дополнительный пункт меню ![Triangle](https://github.com/bucanero/pkgi-ps3/raw/master/data/TRIANGLE.png) под названием **Обновить**. Когда вы выберете его, локальные базы данных будут синхронизированы с определенными URL-адресами.
 
 # DB formats
 
@@ -100,28 +105,28 @@ where:
 ### Sample DB file
 
 An example `pkgi.txt` file following the `contentid,type,name,description,rap,url,size,checksum` format:
-
 ```
-EP0001-FILEMANAG_00-0000000000000000,8,FileManager v1.40,File Manager,,http://github.com/Zarh/ManaGunZ/releases/download/1.40/FileManager_v1.40.pkg,12171120,FAF680636B18AD0B70AA61F48A78C5E42D6972F795F1B82CC434BE3DDE60F00F
-UP0001-IRISMAN00_00-VER4880000000000,8,IRISMAN 4.88.1,Backup Manager,,http://github.com/aldostools/IRISMAN/releases/download/4.88/IRISMAN_4.88.pkg,29411984,E6EF607F0002B31BFB148BE4FC9BDBACB4E53110751F0E667C701D40B5290570
-EP0001-MANAGUNZ0_00-0000000000000000,8,ManaGunZ v1.40,Backup Manager,,http://github.com/Zarh/ManaGunZ/releases/download/1.40/ManaGunZ_v1.40.pkg,17563040,CE0E4036903E881C08259FD69E777F6BC9CD24E823B471A7B15C88FDDBB2E330
-UP0001-PS3SFM001_00-0000000000000000,8,Simple file manager v0.5.2,File Manager,,http://github.com/lmirel/fm_psx/releases/download/v0.5.2/sfm_ps3.pkg,1098800,301F64CC94E9BC442FDAC9199BFB8153AC2430A5E47331C6CF8A25B7881648A6
-EP0001-UPDWEBMOD_00-0000000000000000,9,webMAN MOD v1.47.36,Backup Manager,,http://github.com/aldostools/webMAN-MOD/releases/download/1.47.36/webMAN_MOD_1.47.36_Installer.pkg,13580448,
+EP0000-NP9999999_00-0AB00A00FR000000,0,My PKG Test,A description of my pkg,dac109e963294de6cd6f6faf3f045fe9,http://192.168.1.1/html/mypackage.pkg,2715513,afb545c6e71bd95f77994ab4a659efbb8df32208f601214156ad89b1922e73c3
+UP0001-NP00PKGI3_00-0000000000000000,0,PKGi PS3 v0.1.0,,,http://bucanero.heliohost.org/pkgi.pkg,284848,3dc8de2ed94c0f9efeafa81df9b7d58f8c169e2875133d6d2649a7d477c1ae13
 ```
 ### Content types
 
-| Type value |	Content type | DB File |
-|------------|--------------|---------|
-| 0	| Unknown            |
-| 1	| Game               | `pkgi_games.txt`
-| 2	| DLC                | `pkgi_dlcs.txt`
-| 3	| Theme              | `pkgi_themes.txt`
-| 4	| Avatar             | `pkgi_avatars.txt`
-| 5	| Demo               | `pkgi_demos.txt`
-| 6	| Update             | `pkgi_updates.txt`
-| 7	| Emulator           | `pkgi_emulators.txt`
-| 8	| Application        | `pkgi_apps.txt`
-| 9	| Tool               | `pkgi_tools.txt`
+| Type value |	Content type |
+|------------|--------------|
+| 0	| Все
+| 1	| Игры из регионов
+| 2	| Игры на русском
+| 3	| Игры PS2 для PS3
+| 4	| Игры PS1 для PS3
+| 5	| miniS для PS3
+| 6	| Дополнения DLC
+| 7	| Темы оформления
+| 8	| Аватары
+| 9	| Демо
+| 10	| Менеджеры
+| 11	| Приложения
+| 12	| Читы к играм
+| 13	| Обновления
 
 ## User-defined DB format
 
@@ -228,9 +233,9 @@ UDP multicast address `239.255.0.100:30000`. To receive them you can use [socat]
 
 [PSDLE]: https://repod.github.io/psdle/
 [socat]: http://www.dest-unreach.org/socat/
-[pkgi_downloads]: https://github.com/bucanero/pkgi-ps3/releases
-[pkgi_latest]: https://github.com/bucanero/pkgi-ps3/releases/latest
-[pkgi_license]: https://github.com/bucanero/pkgi-ps3/blob/master/LICENSE
-[img_downloads]: https://img.shields.io/github/downloads/bucanero/pkgi-ps3/total.svg?maxAge=3600
-[img_latest]: https://img.shields.io/github/release/bucanero/pkgi-ps3.svg?maxAge=3600
-[img_license]: https://img.shields.io/github/license/bucanero/pkgi-ps3.svg?maxAge=2592000
+[pkgi_downloads]: https://github.com/ErikPshat/pkgi/releases
+[pkgi_latest]: https://github.com/ErikPshat/pkgi/releases/latest
+[pkgi_license]: https://github.com/ErikPshat/pkgi/blob/master/LICENSE
+[img_downloads]: https://img.shields.io/github/downloads/ErikPshat/pkgi/total.svg?maxAge=3600
+[img_latest]: https://img.shields.io/github/release/ErikPshat/pkgi.svg?maxAge=3600
+[img_license]: https://img.shields.io/github/license/ErikPshat/pkgi.svg?maxAge=2592000
