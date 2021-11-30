@@ -1,10 +1,10 @@
-msgid ""
-msgstr ""
+msgid "---translated by---"
+msgstr "ErikPshat"
 "Project-Id-Version: PKGi PS3\n"
 "POT-Creation-Date: 2021-10-09 19:00-0300\n"
 "PO-Revision-Date: 2021-10-09 19:00-0300\n"
 "Last-Translator: ErikPshat\n"
-"Language-Team: \n"
+"Language-Team: PSPx Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ASCII\n"
@@ -179,8 +179,8 @@ msgid "Exit"
 msgstr "Выход"
 
 #: pkgi.c:678
-msgid "Successfully downloaded PKGi PS3 update"
-msgstr "Успешно скачано обновление PKGi PS3"
+msgid "Successfully downloaded PKGi PS3 RUS MOD update"
+msgstr "Успешно скачано обновление PKGi PS3 RUS MOD"
 
 #: pkgi.c:1051
 msgid "Search"
@@ -221,12 +221,12 @@ msgstr "Обновление загружено"
 #: pkgi_dialog.c:319
 #, c-format
 msgid "press %s to cancel"
-msgstr "Нажмите %s для отмены"
+msgstr "Нажмите %s  для отмены"
 
 #: pkgi_dialog.c:333
 #, c-format
 msgid "press %s to close - %s to scan updates"
-msgstr "Нажмите %s чтобы закрыть - %s для сканирования обновлений"
+msgstr "Нажмите %s  чтобы закрыть - %s  для сканирования обновлений"
 
 #: pkgi_dialog.c:365
 msgid "Enter"
@@ -239,7 +239,7 @@ msgstr "Назад"
 #: pkgi_dialog.c:367
 #, c-format
 msgid "press %s to close"
-msgstr "Нажмите %s чтобы закрыть"
+msgstr "Нажмите %s  чтобы закрыть"
 
 #. 00000069 - Display title
 #: pkgi_download.c:183
@@ -400,11 +400,8 @@ msgstr "Мелодия"
 
 #: pkgi_menu.c:119
 msgid "Refresh..."
-msgstr "Обновить..."
+msgstr "Обновить базу..."
 
 #: pkgi_menu.c:326
 msgid "Direct DL"
 msgstr "Прямая загрузка"
-
-#msgid "---translated by---"
-#msgstr "ErikPshat"

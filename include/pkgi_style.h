@@ -16,10 +16,10 @@
 #define PKGI_UTF8_INSTALLED "\x04" //"\xe2\x97\x8f" // 0x25cf
 #define PKGI_UTF8_PARTIAL   "\x09" //"\xe2\x97\x8b" // 0x25cb
 
-#define PKGI_UTF8_B  "Б"
-#define PKGI_UTF8_KB "Кб" // "\xe3\x8e\x85" // 0x3385
-#define PKGI_UTF8_MB "Мб" // "\xe3\x8e\x86" // 0x3386
-#define PKGI_UTF8_GB "Гб" // "\xe3\x8e\x87" // 0x3387
+#define PKGI_UTF8_B  "B"
+#define PKGI_UTF8_KB "KB" // "\xe3\x8e\x85" // 0x3385
+#define PKGI_UTF8_MB "MB" // "\xe3\x8e\x86" // 0x3386
+#define PKGI_UTF8_GB "GB" // "\xe3\x8e\x87" // 0x3387
 
 #define PKGI_UTF8_CLEAR "\xaf" // 0x00d7
 
@@ -77,7 +77,7 @@
 
 #define PKGI_MENU_Z            900
 #define PKGI_MENU_TEXT_Z       800
-#define PKGI_MENU_WIDTH        200 //150 ширина шторки
-#define PKGI_MENU_HEIGHT       472 //480 высота меню
-#define PKGI_MENU_LEFT_PADDING 14  //20 отступ пунктов меню слева
-#define PKGI_MENU_TOP_PADDING  40  //40 отступ пунктов меню сверху
+#define PKGI_MENU_WIDTH        200 //150 С€РёСЂРёРЅР° С€С‚РѕСЂРєРё
+#define PKGI_MENU_HEIGHT       472 //480 РІС‹СЃРѕС‚Р° РјРµРЅСЋ
+#define PKGI_MENU_LEFT_PADDING 14  //20 РѕС‚СЃС‚СѓРї РїСѓРЅРєС‚РѕРІ РјРµРЅСЋ СЃР»РµРІР°
+#define PKGI_MENU_TOP_PADDING  40  //40 РѕС‚СЃС‚СѓРї РїСѓРЅРєС‚РѕРІ РјРµРЅСЋ СЃРІРµСЂС…Сѓ

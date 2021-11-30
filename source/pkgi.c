@@ -670,7 +670,7 @@ static void pkgi_update_check_thread(void)
 
     json_object * jobj = json_tokener_parse(buffer);
 
-    if ((value = json_parse(jobj, "name")) == NULL || !pkgi_memequ("PKGi PS3", value, 8) || pkgi_stricmp(PKGI_VERSION, value+10) == 0)
+    if ((value = json_parse(jobj, "name")) == NULL || !pkgi_memequ("PKGi PS3 RUS MOD", value, 8) || pkgi_stricmp(PKGI_VERSION, value+10) == 0)
     {
         LOG("no new version available");
         pkgi_thread_exit();
@@ -689,7 +689,7 @@ static void pkgi_update_check_thread(void)
 
     DbItem update_item = {
         .content = "UP0001-NP00PKGI3_00-0000000000000000",
-        .name    = "PKGi PS3 Update",
+        .name    = "PKGi PS3 RUS MOD Update",
         .url     = value,
     };
 
@@ -697,7 +697,7 @@ static void pkgi_update_check_thread(void)
     
     if (pkgi_download(&update_item, 0) && install(update_item.content))
     {
-        pkgi_dialog_message(update_item.name, _("Successfully downloaded PKGi PS3 update"));
+        pkgi_dialog_message(update_item.name, _("Successfully downloaded PKGi PS3 RUS MOD update"));
         LOG("update downloaded!");
     }
 
@@ -733,7 +733,7 @@ int main(int argc, const char* argv[])
     state = StateRefreshing;
     pkgi_start_thread("refresh_thread", &pkgi_refresh_thread);
 
-    pkgi_texture background = pkgi_load_image_buffer(background, jpg);
+    pkgi_texture background = pkgi_load_image_buffer(background, png);
 
     if (config.version_check)
     {
