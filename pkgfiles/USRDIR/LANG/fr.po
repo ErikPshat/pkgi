@@ -388,3 +388,6 @@ msgstr "RafraŒchir..."
 #: pkgi_menu.c:326
 msgid "Direct DL"
 msgstr "T‚l‚chargement Direct"
+
+#msgid "---translated by---"
+#msgstr "Algol"

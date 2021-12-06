@@ -388,3 +388,6 @@ msgstr "P„ivit„..."
 #: pkgi_menu.c:326
 msgid "Direct DL"
 msgstr "Suora DL"
+
+#msgid "---translated by---"
+#msgstr "sestain"

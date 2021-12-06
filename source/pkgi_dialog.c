@@ -107,7 +107,7 @@ void pkgi_dialog_ok_cancel(const char* title, const char* text, pkgi_dialog_call
 void pkgi_dialog_error(const char* text)
 {
     pkgi_dialog_lock();
-    pkgi_dialog_data_init(DialogError, _("ERROR"), text);
+    pkgi_dialog_data_init(DialogError, _("ОШИБКА!"), text);
     pkgi_dialog_unlock();
 }
 

@@ -250,7 +250,7 @@ void cb_dialog_download(int res)
     DbItem* item = pkgi_db_get(selected_item);
 
     item->presence = PresenceMissing;
-    pkgi_dialog_start_progress(_("Downloading..."), _("Preparing..."), 0);
+    pkgi_dialog_start_progress(_("Скачивание..."), _("Подготовка..."), 0);
     pkgi_start_thread("download_thread", &pkgi_download_thread);
 }
 
@@ -490,7 +490,7 @@ static void pkgi_do_main(pkgi_input* input)
         else if (item->presence == PresenceIncomplete || (item->presence == PresenceMissing))
         {
             LOG("[%.9s] %s - starting to install", item->content + 7, item->name);
-            pkgi_dialog_start_progress(_("Downloading..."), _("Preparing..."), 0);
+            pkgi_dialog_start_progress(_("Скачивание..."), _("Подготовка..."), 0);
             pkgi_start_thread("download_thread", &pkgi_download_thread);
         }
     }
@@ -693,7 +693,7 @@ static void pkgi_update_check_thread(void)
         .url     = value,
     };
 
-    pkgi_dialog_start_progress(update_item.name, _("Preparing..."), 0);
+    pkgi_dialog_start_progress(update_item.name, _("Подготовка..."), 0);
     
     if (pkgi_download(&update_item, 0) && install(update_item.content))
     {

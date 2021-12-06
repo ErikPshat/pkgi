@@ -136,7 +136,7 @@ static int create_queue_pdb_files(void)
 
 	// 00000069 - Display title	
 	char title_str[256];
-	pkgi_snprintf(title_str, sizeof(title_str), "\xE2\x98\x85 %s \x22%s\x22", _("Download"), db_item->name);
+	pkgi_snprintf(title_str, sizeof(title_str), "\xE2\x98\x85 %s \x22%s\x22", _("Фоновая"), db_item->name);
 	write_pdb_string(fpPDB, PDB_HDR_TITLE, title_str);
 	
 	// 000000D9 - Content id 
@@ -177,7 +177,7 @@ int create_install_pdb_files(const char *path, uint64_t size)
 	write_pdb_int64(fp2, PDB_HDR_SIZE, &size);
 
 	// 00000069 - Display title	
-    pkgi_snprintf(temp_buffer, sizeof(temp_buffer), "\xE2\x98\x85 %s \x22%s\x22", _("Install"), db_item->name);
+    pkgi_snprintf(temp_buffer, sizeof(temp_buffer), "\xE2\x98\x85 %s \x22%s\x22", _("Прямая"), db_item->name);
 	write_pdb_string(fp1, PDB_HDR_TITLE, temp_buffer);
 	write_pdb_string(fp2, PDB_HDR_TITLE, temp_buffer);
 
@@ -210,17 +210,17 @@ static void calculate_eta(uint32_t speed)
     uint64_t seconds = (download_size - download_offset) / speed;
     if (seconds < 60)
     {
-        pkgi_snprintf(dialog_eta, sizeof(dialog_eta), "%s: %us", _("ETA"), (uint32_t)seconds);
+        pkgi_snprintf(dialog_eta, sizeof(dialog_eta), "%s: %u sec", _("ETA"), (uint32_t)seconds);
     }
     else if (seconds < 3600)
     {
-        pkgi_snprintf(dialog_eta, sizeof(dialog_eta), "%s: %um %02us", _("ETA"), (uint32_t)(seconds / 60), (uint32_t)(seconds % 60));
+        pkgi_snprintf(dialog_eta, sizeof(dialog_eta), "%s: %u min %02u sec", _("ETA"), (uint32_t)(seconds / 60), (uint32_t)(seconds % 60));
     }
     else
     {
         uint32_t hours = (uint32_t)(seconds / 3600);
         uint32_t minutes = (uint32_t)((seconds - hours * 3600) / 60);
-        pkgi_snprintf(dialog_eta, sizeof(dialog_eta), "%s: %uh %02um", _("ETA"), hours, minutes);
+        pkgi_snprintf(dialog_eta, sizeof(dialog_eta), "%s: %u hours %02u min", _("ETA"), hours, minutes);
     }
 }
 
@@ -246,11 +246,11 @@ static int update_progress(void *p, int64_t dltotal, int64_t dlnow, int64_t ulto
             uint32_t speed = (uint32_t)(((download_offset - initial_offset) * 1000) / (info_now - info_start));
             if (speed > 10 * 1000 * 1024)
             {
-                pkgi_snprintf(dialog_extra, sizeof(dialog_extra), "%u %s/s", speed / 1024 / 1024, _("MB"));
+                pkgi_snprintf(dialog_extra, sizeof(dialog_extra), "%u %s/c", speed / 1024 / 1024, _("MB"));
             }
             else if (speed > 1000)
             {
-                pkgi_snprintf(dialog_extra, sizeof(dialog_extra), "%u %s/s", speed / 1024, _("KB"));
+                pkgi_snprintf(dialog_extra, sizeof(dialog_extra), "%u %s/c", speed / 1024, _("KB"));
             }
 
             if (speed != 0)
@@ -384,7 +384,7 @@ static void download_start(void)
     LOG("resuming pkg download from %llu offset", download_offset);
     download_resume = 0;
     info_update = pkgi_time_msec() + 1000;
-    pkgi_dialog_set_progress_title(_("Downloading..."));
+    pkgi_dialog_set_progress_title(_("Скачивание..."));
 }
 
 static int download_data(void)
@@ -627,7 +627,7 @@ int pkgi_download(const DbItem* item, const int background_dl)
     else
     {
         LOG("cannot load resume file, starting download from scratch");
-        pkgi_dialog_set_progress_title(background_dl ? _("Adding background task...") : _("Downloading..."));
+        pkgi_dialog_set_progress_title(background_dl ? _("Добавлена фоновая задача...") : _("Скачивание..."));
         download_resume = 0;
         sha256_init(&sha);
         sha256_starts(&sha, 0);

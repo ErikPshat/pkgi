@@ -1,410 +1,394 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PKGi PS3 RUS MOD\n"
+"Project-Id-Version: PKGi PS3\n"
 "POT-Creation-Date: 2021-10-09 19:00-0300\n"
 "PO-Revision-Date: 2021-10-09 19:00-0300\n"
-"Last-Translator: ErikPshat\n"
-"Language-Team: PSPx Team\n"
-"Language: ru\n"
+"Last-Translator: none\n"
+"Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ANSI\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ./source\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
-"X-Poedit-SourceCharset: ANSI\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: pkgi.c:82
 msgid "Installing"
-msgstr "Установка"
+msgstr ""
 
 #: pkgi.c:82
 msgid "Please wait..."
-msgstr "Пожалуйста, подождите..."
+msgstr ""
 
 #: pkgi.c:94
 msgid "Installation failed"
-msgstr "Установка не удалась"
+msgstr ""
 
 #: pkgi.c:118
 msgid "Successfully downloaded"
-msgstr "Загрузка завершена!"
+msgstr ""
 
 #: pkgi.c:122
 msgid "Task successfully queued (reboot to start)"
-msgstr "Задача добавлена в очередь (старт после перезагрузки)"
+msgstr ""
 
 #: pkgi.c:163
 msgid "GB"
-msgstr "ГБ"
+msgstr ""
 
 #: pkgi.c:167 pkgi_download.c:249
 msgid "MB"
-msgstr "МБ"
+msgstr ""
 
 #: pkgi.c:171 pkgi.c:504 pkgi_download.c:253
 msgid "KB"
-msgstr "КБ"
+msgstr ""
 
 #: pkgi.c:175
 msgid "B"
-msgstr "Б"
+msgstr ""
 
 #: pkgi.c:185
 #, c-format
 msgid "pkg requires %u %s free space, but only %u %s available"
-msgstr "Требуется %u %s свободного места, доступно %u %s"
+msgstr ""
 
-#: pkgi.c:225 pkgi_menu.c:113 pkgi_menu.c:125
+#: pkgi.c:225 pkgi_menu.c:109 pkgi_menu.c:121
 msgid "All"
-msgstr "Все"
+msgstr ""
 
-#: pkgi.c:226 pkgi_menu.c:126
+#: pkgi.c:226 pkgi_menu.c:122
 msgid "Games"
-msgstr "Игры из регионов"
+msgstr ""
 
-#: pkgi.c:227 pkgi_menu.c:127
-msgid "RUS"
-msgstr "Игры на русском"
-
-#: pkgi.c:228 pkgi_menu.c:128
-msgid "PS2"
-msgstr "Игры PS2 для PS3"
-
-#: pkgi.c:229 pkgi_menu.c:129
-msgid "PS1"
-msgstr "Игры PS1 для PS3"
-
-#: pkgi.c:230 pkgi_menu.c:130
-msgid "miniS"
-msgstr "miniS для PS3"
-
-#: pkgi.c:231 pkgi_menu.c:131
+#: pkgi.c:227 pkgi_menu.c:123
 msgid "DLCs"
-msgstr "Дополнения DLC"
+msgstr ""
 
-#: pkgi.c:232 pkgi_menu.c:132
+#: pkgi.c:228 pkgi_menu.c:124
 msgid "Themes"
-msgstr "Темы оформления"
+msgstr ""
 
-#: pkgi.c:233 pkgi_menu.c:133
+#: pkgi.c:229 pkgi_menu.c:125
 msgid "Avatars"
-msgstr "Аватары"
+msgstr ""
 
-#: pkgi.c:234 pkgi_menu.c:134
+#: pkgi.c:230 pkgi_menu.c:126
 msgid "Demos"
-msgstr "Демо"
+msgstr ""
 
-#: pkgi.c:235 pkgi_menu.c:135
-msgid "Managers"
-msgstr "Менеджеры"
-
-#: pkgi.c:236 pkgi_menu.c:136
-msgid "Apps"
-msgstr "Приложения"
-
-#: pkgi.c:237 pkgi_menu.c:137
-msgid "Cheats"
-msgstr "Читы к играм"
-
-#: pkgi.c:238 pkgi_menu.c:122 pkgi_menu.c:138
+#: pkgi.c:231 pkgi_menu.c:118 pkgi_menu.c:127
 msgid "Updates"
-msgstr "Обновления"
+msgstr ""
 
-#: pkgi.c:239
+#: pkgi.c:232 pkgi_menu.c:128
+msgid "Emulators"
+msgstr ""
+
+#: pkgi.c:233 pkgi_menu.c:129
+msgid "Apps"
+msgstr ""
+
+#: pkgi.c:234 pkgi_menu.c:130
+msgid "Tools"
+msgstr ""
+
+#: pkgi.c:235
 msgid "Unknown"
-msgstr "Неизвестно"
+msgstr ""
 
-#: pkgi.c:271
+#: pkgi.c:253
 msgid "Exit to XMB?"
-msgstr "Выйти в XMB?"
+msgstr ""
 
-#: pkgi.c:454
+#: pkgi.c:436
 msgid "No items!"
-msgstr "Список пуст!"
+msgstr ""
 
 #: pkgi.c:462
 msgid "Item already installed, download again?"
-msgstr "Контент уже установлен, скачать заново?"
+msgstr ""
 
-#: pkgi.c:253 pkgi.c:493 pkgi_download.c:387 pkgi_download.c:630
-#: msgid "Downloading..."
-#: msgstr "Скачивание..."
+#: pkgi.c:471 pkgi_download.c:372 pkgi_download.c:652
+msgid "Downloading..."
+msgstr "Downloade..."
 
-#: pkgi.c:253 pkgi.c:493 pkgi.c:696
-#: msgid "Preparing..."
-#: msgstr "Подготовка..."
+#: pkgi.c:471 pkgi.c:674
+msgid "Preparing..."
+msgstr "Preparing..."
 
 #: pkgi.c:504 pkgi.c:508
 msgid "Refreshing"
-msgstr "Обновление"
+msgstr ""
 
 #: pkgi.c:563 pkgi.c:567
 msgid "Count"
-msgstr "Итого"
+msgstr ""
 
 #: pkgi.c:575
 msgid "Free"
-msgstr "Свободно"
+msgstr ""
 
 #: pkgi.c:585
 msgid "Select"
-msgstr "Выбор"
+msgstr ""
 
 #: pkgi.c:585
 msgid "Close"
-msgstr "Закрыть"
+msgstr ""
 
 #: pkgi.c:585
 msgid "Cancel"
-msgstr "Отмена"
+msgstr ""
 
 #: pkgi.c:589 pkgi_download.c:136
 msgid "Download"
-msgstr "Скачать"
+msgstr ""
 
 #: pkgi.c:589
 msgid "Menu"
-msgstr "Меню"
+msgstr ""
 
 #: pkgi.c:589
 msgid "Details"
-msgstr "Детали"
+msgstr ""
 
 #: pkgi.c:589
 msgid "Exit"
-msgstr "Выход"
+msgstr ""
 
 #: pkgi.c:678
-msgid "Successfully downloaded PKGi PS3 RUS MOD update"
-msgstr "Успешно скачано обновление PKGi PS3 RUS MOD"
+msgid "Successfully downloaded PKGi PS3 update"
+msgstr ""
 
 #: pkgi.c:1051
 msgid "Search"
-msgstr "Поиск"
+msgstr ""
 
 #: pkgi_db.c:145 pkgi_db.c:153
 msgid "failed to download list from"
-msgstr "не удалось загрузить список из"
+msgstr ""
 
 #: pkgi_db.c:159
 msgid "list is too large... check for newer pkgi version!"
-msgstr "список слишком велик... проверьте наличие более новой версии pkgi!"
+msgstr ""
 
 #: pkgi_db.c:187
 msgid "list is empty... check the DB server"
-msgstr "список пуст... проверьте сервер БД"
+msgstr ""
 
 #: pkgi_db.c:390
 msgid "ERROR: pkgi.txt file(s) missing or bad config.txt file"
-msgstr "ОШИБКА: отсутствует файл pkgi.txt или испорчен config.txt"
+msgstr ""
 
 #: pkgi_dialog.c:80
 msgid "Content"
-msgstr "Контент"
+msgstr ""
 
 #: pkgi_dialog.c:108
-#: msgid "ERROR"
-#: msgstr "ОШИБКА!"
+msgid "ERROR"
+msgstr "ERROR"
 
 #: pkgi_dialog.c:169
 msgid "Failed to download the update list"
-msgstr "Не удалось загрузить список обновлений"
+msgstr ""
 
 #: pkgi_dialog.c:174
 msgid "update(s) loaded"
-msgstr "обновлений загружено"
+msgstr ""
 
 #: pkgi_dialog.c:319
 #, c-format
 msgid "press %s to cancel"
-msgstr "Нажмите %s  для отмены"
+msgstr ""
 
 #: pkgi_dialog.c:333
 #, c-format
 msgid "press %s to close - %s to scan updates"
-msgstr "Нажмите %s  чтобы закрыть - %s  для проверки обновлений"
+msgstr ""
 
 #: pkgi_dialog.c:365
 msgid "Enter"
-msgstr "Ввод"
+msgstr ""
 
 #: pkgi_dialog.c:365
 msgid "Back"
-msgstr "Назад"
+msgstr ""
 
-#: pkgi_dialog.c:373
+#: pkgi_dialog.c:367
 #, c-format
 msgid "press %s to close"
-msgstr "Нажмите %s  чтобы закрыть"
+msgstr ""
 
 #. 00000069 - Display title
 #: pkgi_download.c:183
 msgid "Install"
-msgstr "Установка"
+msgstr ""
 
 #: pkgi_download.c:216 pkgi_download.c:220 pkgi_download.c:226
 msgid "ETA"
-msgstr "Осталось"
+msgstr ""
 
 #: pkgi_download.c:310 pkgi_download.c:392
 msgid "Could not send HTTP request"
-msgstr "Не удалось отправить HTTP-запрос"
+msgstr ""
 
-#: pkgi_download.c:332 pkgi_download.c:406
+#: pkgi_download.c:317 pkgi_download.c:399
 msgid "HTTP request failed"
-msgstr "HTTP-запрос не удался"
+msgstr ""
 
 #: pkgi_download.c:322 pkgi_download.c:404
 msgid "HTTP response has unknown length"
-msgstr "HTTP-ответ имеет неизвестную длину"
+msgstr ""
 
 #: pkgi_download.c:331
 msgid "Not enough free space on HDD"
-msgstr "Недостаточно свободного места на HDD"
+msgstr ""
 
 #: pkgi_download.c:340
 msgid "Could not create task directory on HDD."
-msgstr "Не удалось создать директорию задач на HDD."
+msgstr ""
 
 #: pkgi_download.c:348
 msgid "Saving background task..."
-msgstr "Сохранение фоновой задачи..."
+msgstr ""
 
 #: pkgi_download.c:354
 msgid "Could not create PKG file to HDD."
-msgstr "Не удалось создать файл PKG на HDD."
+msgstr ""
 
 #: pkgi_download.c:360
 msgid "Could not create task files to HDD."
-msgstr "Не удалось создать файлы задач на HDD."
+msgstr ""
 
 #: pkgi_download.c:425
 msgid "HTTP download error"
-msgstr "Ошибка загрузки по HTTP"
+msgstr ""
 
 #: pkgi_download.c:432
 msgid "HTTP connection closed"
-msgstr "HTTP-соединение закрыто"
+msgstr ""
 
 #: pkgi_download.c:445
 msgid "failed to write to"
-msgstr "не удалось записать"
+msgstr ""
 
 #: pkgi_download.c:465
 msgid "cannot create folder"
-msgstr "не удалось создать папку"
+msgstr ""
 
 #: pkgi_download.c:475
 msgid "cannot create file"
-msgstr "не удалось создать файл"
+msgstr ""
 
 #: pkgi_download.c:490
 msgid "cannot resume file"
-msgstr "невозможно возобновить файл"
+msgstr ""
 
 #: pkgi_download.c:562
 msgid "pkg integrity failed, try downloading again"
-msgstr "Ошибка целостности pkg, попробуйте загрузить снова"
+msgstr ""
 
 #: pkgi_download.c:573
 msgid "Creating RAP file"
-msgstr "Создание файла RAP"
+msgstr ""
 
 #: pkgi_download.c:581 pkgi_download.c:626
 msgid "Cannot save"
-msgstr "Не удалось сохранить"
+msgstr ""
 
 #: pkgi_download.c:621
 msgid "Creating RIF file"
-msgstr "Создание файла RIF"
+msgstr ""
 
 #: pkgi_download.c:646
 msgid "Resuming..."
-msgstr "Возобновление..."
+msgstr ""
 
 #: pkgi_download.c:652
-#: msgid "Adding background task..."
-#: msgstr "Добавлена фоновая задача..."
+msgid "Adding background task..."
+msgstr ""
 
 #: pkgi_download.c:675
 msgid "Downloading icon"
-msgstr "Загрузка иконки"
+msgstr ""
 
 #: pkgi_download.c:713
 msgid "Could not create install directory on HDD."
-msgstr "Не удалось создать установочный каталог на HDD."
+msgstr ""
 
 #: pkgi_menu.c:102
 msgid "Search..."
-msgstr "Поиск..."
+msgstr ""
 
 #: pkgi_menu.c:103
 msgid "Sort by:"
-msgstr "Сортировка:"
+msgstr ""
 
 #: pkgi_menu.c:104
 msgid "Title"
-msgstr "TitleID"
+msgstr ""
 
 #: pkgi_menu.c:105
 msgid "Region"
-msgstr "Регион"
+msgstr ""
 
 #: pkgi_menu.c:106
 msgid "Name"
-msgstr "Название"
+msgstr ""
 
 #: pkgi_menu.c:107
 msgid "Size"
-msgstr "Размер"
+msgstr ""
 
 #: pkgi_menu.c:108
 msgid "Content:"
-msgstr "Контент:"
+msgstr ""
 
 #: pkgi_menu.c:110
 msgid "Regions:"
-msgstr "Регионы:"
+msgstr ""
 
 #: pkgi_menu.c:111
 msgid "Asia"
-msgstr "Азия"
+msgstr ""
 
 #: pkgi_menu.c:112
 msgid "Europe"
-msgstr "Европа"
+msgstr ""
 
 #: pkgi_menu.c:113
 msgid "Japan"
-msgstr "Япония"
+msgstr ""
 
 #: pkgi_menu.c:114
 msgid "USA"
-msgstr "Америка"
+msgstr ""
 
 #: pkgi_menu.c:115
 msgid "Options:"
-msgstr "Параметры:"
+msgstr ""
 
 #: pkgi_menu.c:116
 msgid "Back. DL"
-msgstr "Фоновая загрузка"
+msgstr ""
 
 #: pkgi_menu.c:117
 msgid "Music"
-msgstr "Мелодия"
+msgstr ""
 
 #: pkgi_menu.c:119
 msgid "Refresh..."
-msgstr "Обновить базу..."
+msgstr ""
 
-#: pkgi_menu.c:334
+#: pkgi_menu.c:326
 msgid "Direct DL"
-msgstr "Прямая загрузка"
+msgstr ""
 
 #msgid "---translated by---"
-#msgstr "ErikPshat"
+#msgstr ""

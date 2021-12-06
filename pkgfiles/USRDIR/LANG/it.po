@@ -115,11 +115,11 @@ msgid "Item already installed, download again?"
 msgstr "Elemento gi… installato, scaricarlo di nuovo?"
 
 #: pkgi.c:471 pkgi_download.c:372 pkgi_download.c:652
-msgid "Downloading..."
+msgid "Скачивание..."
 msgstr "Download in corso..."
 
 #: pkgi.c:471 pkgi.c:674
-msgid "Preparing..."
+msgid "Подготовка..."
 msgstr "Preparazione..."
 
 #: pkgi.c:504 pkgi.c:508
@@ -191,7 +191,7 @@ msgid "Content"
 msgstr "Contenuto"
 
 #: pkgi_dialog.c:108
-msgid "ERROR"
+msgid "ОШИБКА!"
 msgstr "ERRORE"
 
 #: pkgi_dialog.c:169
@@ -310,7 +310,7 @@ msgid "Resuming..."
 msgstr "Ripristino in corso..."
 
 #: pkgi_download.c:652
-msgid "Adding background task..."
+msgid "Добавлена фоновая задача..."
 msgstr "Aggiunta del task in background..."
 
 #: pkgi_download.c:675
@@ -388,3 +388,6 @@ msgstr "Aggiorna..."
 #: pkgi_menu.c:326
 msgid "Direct DL"
 msgstr "DL diretto"
+
+#msgid "---translated by---"
+#msgstr "Venos"
