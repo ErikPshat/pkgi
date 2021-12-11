@@ -112,7 +112,7 @@ msgstr "Читы к играм"
 
 #: pkgi.c:238 pkgi_menu.c:122 pkgi_menu.c:138
 msgid "Updates"
-msgstr "Обновления"
+msgstr "Обновление"
 
 #: pkgi.c:239
 msgid "Unknown"
@@ -120,7 +120,7 @@ msgstr "Неизвестно"
 
 #: pkgi.c:271
 msgid "Exit to XMB?"
-msgstr "Выйти в XMB?"
+msgstr "Вы действительно хотите выйти в XMB?"
 
 #: pkgi.c:454
 msgid "No items!"

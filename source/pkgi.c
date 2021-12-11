@@ -670,7 +670,7 @@ static void pkgi_update_check_thread(void)
 
     json_object * jobj = json_tokener_parse(buffer);
 
-    if ((value = json_parse(jobj, "name")) == NULL || !pkgi_memequ("PKGi PS3 RUS MOD v", value, 8) || pkgi_stricmp(PKGI_VERSION, value+10) == 0)
+    if ((value = json_parse(jobj, "name")) == NULL || !pkgi_memequ("PKGi PS3 RUS MOD", value, 8) || pkgi_stricmp(PKGI_VERSION, value+18) == 0)
     {
         LOG("no new version available");
         pkgi_thread_exit();
