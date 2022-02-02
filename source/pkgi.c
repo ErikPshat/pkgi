@@ -537,7 +537,7 @@ static void pkgi_do_refresh(void)
 static void pkgi_do_head(void)
 {
     char title[256];
-    pkgi_snprintf(title, sizeof(title), "v%s : %s", PKGI_VERSION, content_type_str(config.content));
+    pkgi_snprintf(title, sizeof(title), "v%s :: %s", PKGI_VERSION, content_type_str(config.content));
     pkgi_draw_text(0, 0, PKGI_COLOR_TEXT_HEAD, title);
 
     pkgi_draw_fill_rect(0, font_height, VITA_WIDTH, PKGI_MAIN_HLINE_HEIGHT, PKGI_COLOR_HLINE);
