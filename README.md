@@ -208,7 +208,7 @@ You need to have installed:
 - [PS3 toolchain](https://github.com/bucanero/ps3toolchain)
 - [PSL1GHT](https://github.com/ps3dev/PSL1GHT) SDK
 - [Tiny3D](https://github.com/wargio/Tiny3D) library
-- [YA2D](https://github.com/bucanero/ya2d_ps3) library (an extended version from my repo)
+- [YA2D](https://github.com/ErikPshat/pkgi/tree/master/ya2d_ps3) library (an extended version from my repo)
 - [PolarSSL](https://github.com/bucanero/ps3libraries/blob/master/scripts/015-polarssl-1.3.9.sh) library (v1.3.9)
 - [libcurl](https://github.com/bucanero/ps3libraries/blob/master/scripts/016-libcurl-7.64.1.sh) library (v7.64.1)
 - [MikMod](https://github.com/ps3dev/ps3libraries/blob/master/scripts/011-libmikmod-3.1.11.sh) library
