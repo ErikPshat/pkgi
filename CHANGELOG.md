@@ -2,6 +2,10 @@
 
 All notable changes to the `pkgi-ps3` project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.2.220701](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.2.220701) - 2022-07-01
+
+*  Убрана проверка на установленную игру по title id (ибо при установке показывало, что установлены и другие компоненты, хотя вы их не качали)
+
 ## [v1.2.2.1](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.2.1) - 2021-11-30
 
 ### Added

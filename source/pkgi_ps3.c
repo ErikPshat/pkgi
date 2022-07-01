@@ -837,7 +837,7 @@ int pkgi_dir_exists(const char* path)
 int pkgi_is_installed(const char* content)
 {    
     char path[128];
-    snprintf(path, sizeof(path), "/dev_hdd0/game/%.9s", content + 7);
+    //snprintf(path, sizeof(path), "/dev_hdd0/game/%.9s", content + 7); //времено убрано сравнение по title id
 
     return (pkgi_dir_exists(path));
 }
