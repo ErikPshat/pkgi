@@ -182,6 +182,14 @@ msgstr "Выход"
 msgid "Successfully downloaded PKGi PS3 RUS MOD update"
 msgstr "Успешно скачано обновление PKGi PS3 RUS MOD"
 
+#: pkgi.c:748
+msgid "act.dat no find"
+msgstr "act.dat не найден"
+
+#: pkgi.c:751
+msgid "User:%d"
+msgstr "Пользователь:%d"
+
 #: pkgi.c:1051
 msgid "Search"
 msgstr "Поиск"

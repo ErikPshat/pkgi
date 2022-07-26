@@ -5,7 +5,7 @@
 #include "pkgi_dialog.h"
 
 #define PKGI_UPDATE_URL     "https://api.github.com/repos/ErikPshat/pkgi/releases/latest"
-#define PKGI_VERSION        "1.2.2.220701"
+#define PKGI_VERSION        "1.2.3.220726"
 
 #define PKGI_BUTTON_SELECT 0x00010000
 #define PKGI_BUTTON_START  0x00080000
@@ -76,6 +76,7 @@ const char* pkgi_get_temp_folder(void);
 const char* pkgi_get_app_folder(void);
 int pkgi_is_incomplete(const char* titleid);
 int pkgi_is_installed(const char* titleid);
+int chk_act_dat();
 int pkgi_install(const char* titleid);
 
 uint32_t pkgi_time_msec();

@@ -166,6 +166,14 @@ msgstr ""
 msgid "Successfully downloaded PKGi PS3 update"
 msgstr ""
 
+#: pkgi.c:748
+msgid "act.dat no find"
+msgstr ""
+
+#: pkgi.c:751
+msgid "User:%d"
+msgstr ""
+
 #: pkgi.c:1051
 msgid "Search"
 msgstr ""

@@ -12,6 +12,7 @@
 #include <mini18n.h>
 #include <json/json.h>
 
+
 #define content_filter(c)   (c ? 1 << (7 + c) : DbFilterAllContent)
 
 typedef enum  {
@@ -534,10 +535,10 @@ static void pkgi_do_refresh(void)
     pkgi_draw_text((VITA_WIDTH - w) / 2, VITA_HEIGHT / 2, PKGI_COLOR_TEXT, text);
 }
 
-static void pkgi_do_head(void)
+static void pkgi_do_head(const char* atxt)
 {
     char title[256];
-    pkgi_snprintf(title, sizeof(title), "v%s :: %s", PKGI_VERSION, content_type_str(config.content));
+    pkgi_snprintf(title, sizeof(title), "v%s :: %s :: %s", PKGI_VERSION, content_type_str(config.content),atxt);
     pkgi_draw_text(0, 0, PKGI_COLOR_TEXT_HEAD, title);
 
     pkgi_draw_fill_rect(0, font_height, VITA_WIDTH, PKGI_MAIN_HLINE_HEIGHT, PKGI_COLOR_HLINE);
@@ -616,6 +617,14 @@ static void pkgi_do_tail(void)
     pkgi_clip_remove();
 }
 
+/*static void check_act_dat(void)
+{
+	char atxt[140];	
+	if (chk_act_dat()!=0) {	
+	pkgi_dialog_message(atxt, _("Act.dat not found, activate the console according\nto the instructions in the topic\n[FAQ] Game formats [install, mount, transfer, delete]"));
+	}
+}*/
+
 static void pkgi_do_error(void)
 {
     pkgi_draw_text((VITA_WIDTH - pkgi_text_width(error_state)) / 2, VITA_HEIGHT / 2, PKGI_COLOR_TEXT_ERROR, error_state);
@@ -657,9 +666,9 @@ static void pkgi_update_check_thread(void)
     const char *value;
     char *buffer;
     uint32_t size;
-
+		
     LOG("checking latest pkgi version at %s", PKGI_UPDATE_URL);
-
+	
     buffer = pkgi_http_download_buffer(PKGI_UPDATE_URL, &size);
 
     if (!buffer)
@@ -693,11 +702,11 @@ static void pkgi_update_check_thread(void)
         .url     = value,
     };
 
-    pkgi_dialog_start_progress(update_item.name, _("Подготовка..."), 0);
+    pkgi_dialog_start_progress(update_item.name, _("Подготовка..."), 0);	
     
     if (pkgi_download(&update_item, 0) && install(update_item.content))
     {
-        pkgi_dialog_message(update_item.name, _("Successfully downloaded PKGi PS3 RUS MOD update"));
+        pkgi_dialog_message(update_item.name, _("Successfully downloaded PKGi PS3 RUS MOD update"));		
         LOG("update downloaded!");
     }
 
@@ -734,12 +743,19 @@ int main(int argc, const char* argv[])
     pkgi_start_thread("refresh_thread", &pkgi_refresh_thread);
 
     pkgi_texture background = pkgi_load_image_buffer(background, png);
+	char atxt[20];	
+	if (chk_act_dat()==0) {	
+		pkgi_snprintf(atxt, sizeof(atxt), _("act.dat no find"));
+	} else 
+	{	
+		pkgi_snprintf(atxt, sizeof(atxt), _("User:%d"), chk_act_dat());
+	}	
 
     if (config.version_check)
-    {
-        pkgi_start_thread("update_thread", &pkgi_update_check_thread);
+    {	       
+		pkgi_start_thread("update_thread", &pkgi_update_check_thread);		
     }
-
+		
     pkgi_input input = {0, 0, 0, 0};
     while (pkgi_update(&input) && (state != StateTerminate))
     {
@@ -750,8 +766,8 @@ int main(int argc, const char* argv[])
             pkgi_db_configure(NULL, &config);
             state = StateMain;
         }
-
-        pkgi_do_head();
+        pkgi_do_head(atxt);
+				
         switch (state)
         {
         case StateError:
@@ -777,8 +793,8 @@ int main(int argc, const char* argv[])
             break;
         }
 
-        pkgi_do_tail();
-
+        pkgi_do_tail();		
+		
         if (pkgi_dialog_is_open())
         {
             pkgi_do_dialog(&input);
@@ -794,7 +810,7 @@ int main(int argc, const char* argv[])
             search_active = 1;
             pkgi_dialog_input_get_text(search_text, sizeof(search_text));
             pkgi_db_configure(search_text, &config);
-            reposition();
+            reposition();			
         }
 
         if (pkgi_menu_is_open())
@@ -802,7 +818,7 @@ int main(int argc, const char* argv[])
             if (pkgi_do_menu(&input))
             {
                 Config new_config;
-                pkgi_menu_get(&new_config);
+                pkgi_menu_get(&new_config);				
                 if (config_temp.sort != new_config.sort ||
                     config_temp.order != new_config.order ||
                     config_temp.filter != new_config.filter)
@@ -853,11 +869,9 @@ int main(int argc, const char* argv[])
                     pkgi_start_thread("refresh_thread", &pkgi_refresh_thread);
                 }
             }
-        }
-
-        pkgi_swap();
-    }
-
+        }		
+        pkgi_swap();		
+    }	
     LOG("finished");
     mini18n_close();
     pkgi_free_texture(background);

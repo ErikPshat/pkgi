@@ -834,6 +834,34 @@ int pkgi_dir_exists(const char* path)
     return 0;
 }
 
+int pkgi_f_exists(const char* name)
+{
+	FILE* fd = fopen(name, "rb");
+    if (!fd)
+    {
+        return -1;
+    }
+	fclose(fd);
+    return 1;
+}
+
+int chk_act_dat()
+{
+	int max_uid = 100;
+	char path[64];
+	int k=0;
+		
+	for (int i = 1; i <= max_uid; i++)
+	{
+		snprintf(path, sizeof(path), "/dev_hdd0/home/%08d/exdata/act.dat", i);
+		if(pkgi_f_exists(path)==1) {
+        k=i;
+		break;
+		} else	k=0;
+	}
+	return k;
+}
+
 int pkgi_is_installed(const char* content)
 {    
     char path[128];
