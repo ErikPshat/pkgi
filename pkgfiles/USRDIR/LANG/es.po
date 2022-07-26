@@ -166,6 +166,16 @@ msgstr "Salir"
 msgid "Successfully downloaded PKGi PS3 update"
 msgstr "Actualizaci¢n de PKGi PS3 descargada"
 
+#: pkgi.c:814
+msgid "Act.dat not found, activate the console according"
+msgstr "Act.dat no encontrado, active la consola de acuerdo a"
+
+msgid "to the instructions in the topic [FAQ] Game formats"
+msgstr "Instrucciones en [FAQ] Formatos de juego"
+
+msgid "[install, mount, transfer, delete]"
+msgstr "[instalar, montar, mover, eliminar]"
+
 #: pkgi.c:1051
 msgid "Search"
 msgstr "Buscar"

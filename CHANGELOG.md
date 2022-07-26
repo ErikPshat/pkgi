@@ -2,6 +2,10 @@
 
 All notable changes to the `pkgi-ps3` project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.3.220726](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.3.220726) - 2022-07-26
+
+* Добавлена проверка на активацию, если система не активирована выдаст предупреждение и внизу будет писать, что система не активирована. Если активирована - внизу будет информация  на каком пользователе активация.
+
 ## [v1.2.2.220701](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.2.220701) - 2022-07-01
 
 *  Убрана проверка на установленную игру по title id (ибо при установке показывало, что установлены и другие компоненты, хотя вы их не качали)
