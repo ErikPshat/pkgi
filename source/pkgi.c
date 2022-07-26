@@ -573,7 +573,7 @@ static void pkgi_do_head(void)
     }
 }
 
-static void pkgi_do_tail(const char* atxt)
+static void pkgi_do_tail(const char* atxt, uint32_t acolor)
 {
     pkgi_draw_fill_rect_z(0, bottom_y - font_height/2, PKGI_FONT_Z, VITA_WIDTH, PKGI_MAIN_HLINE_HEIGHT, PKGI_COLOR_HLINE);
 
@@ -590,7 +590,7 @@ static void pkgi_do_tail(const char* atxt)
         pkgi_snprintf(text, sizeof(text), "%s: %u (%u)", _("Count"), count, total);
     }
     pkgi_draw_text(0, bottom_y, PKGI_COLOR_TEXT_TAIL, text);
-	pkgi_draw_text(0, bottom_y+18, PKGI_COLOR_TEXT_TAIL, atxt);
+	pkgi_draw_text(0, bottom_y+18, acolor, atxt);
 
     char size[64];
     pkgi_friendly_size(size, sizeof(size), pkgi_get_free_space());
@@ -738,13 +738,16 @@ int main(int argc, const char* argv[])
     pkgi_texture background = pkgi_load_image_buffer(background, png);
 	char atxt[35];
 	int chk;
+	uint32_t acolor;
 	if (chk_act_dat()==0) {	
 		pkgi_snprintf(atxt, sizeof(atxt), _("The system is not activated!"));		
 		chk=0;
+		acolor=PKGI_COLOR_TEXT_ERROR;
 	} else 
 	{	
 		pkgi_snprintf(atxt, sizeof(atxt), _("Active user: %d"), chk_act_dat());
 		chk=1;
+		acolor=PKGI_COLOR_TEXT_DIALOG;
 	}	
 
     if (config.version_check)
@@ -789,7 +792,7 @@ int main(int argc, const char* argv[])
             break;
         }
 
-        pkgi_do_tail(atxt);
+        pkgi_do_tail(atxt,acolor);
 				
         if (pkgi_dialog_is_open())
         {
@@ -812,7 +815,7 @@ int main(int argc, const char* argv[])
 		if (chk==0)
 		{
 		 char etxt[150];
-		 pkgi_snprintf(etxt, sizeof(etxt), " %s\n%s\n%s", _("Act.dat not found, activate the console according"),_("to the instructions in the topic [FAQ] Game formats"),_("[install, mount, transfer, delete]"));	
+		 pkgi_snprintf(etxt, sizeof(etxt), "%s\n%s\n%s", _("Act.dat not found, activate the console according"),_("to the instructions in the topic [FAQ] Game formats"),_("[install, mount, transfer, delete]"));	
 		 pkgi_dialog_error(etxt);
 		 chk=1;
 		}
