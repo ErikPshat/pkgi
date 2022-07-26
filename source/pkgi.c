@@ -617,14 +617,6 @@ static void pkgi_do_tail(void)
     pkgi_clip_remove();
 }
 
-/*static void check_act_dat(void)
-{
-	char atxt[140];	
-	if (chk_act_dat()!=0) {	
-	pkgi_dialog_message(atxt, _("Act.dat not found, activate the console according\nto the instructions in the topic\n[FAQ] Game formats [install, mount, transfer, delete]"));
-	}
-}*/
-
 static void pkgi_do_error(void)
 {
     pkgi_draw_text((VITA_WIDTH - pkgi_text_width(error_state)) / 2, VITA_HEIGHT / 2, PKGI_COLOR_TEXT_ERROR, error_state);
@@ -743,12 +735,15 @@ int main(int argc, const char* argv[])
     pkgi_start_thread("refresh_thread", &pkgi_refresh_thread);
 
     pkgi_texture background = pkgi_load_image_buffer(background, png);
-	char atxt[20];	
+	char atxt[20], amsg[140];
+	int chk;
 	if (chk_act_dat()==0) {	
-		pkgi_snprintf(atxt, sizeof(atxt), _("act.dat no find"));
+		pkgi_snprintf(atxt, sizeof(atxt), _("act.dat no find"));		
+		chk=0;
 	} else 
 	{	
 		pkgi_snprintf(atxt, sizeof(atxt), _("User:%d"), chk_act_dat());
+		chk=1;
 	}	
 
     if (config.version_check)
@@ -793,7 +788,12 @@ int main(int argc, const char* argv[])
             break;
         }
 
-        pkgi_do_tail();		
+        pkgi_do_tail();
+		if (chk==0)
+		{
+		 pkgi_dialog_message(amsg, _("Act.dat not found, activate the console according\nto the instructions in the topic\n[FAQ] Game formats [install, mount, transfer, delete]"));
+		 chk=1;
+		}
 		
         if (pkgi_dialog_is_open())
         {
