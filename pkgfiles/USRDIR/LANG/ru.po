@@ -183,12 +183,22 @@ msgid "Successfully downloaded PKGi PS3 RUS MOD update"
 msgstr "Успешно скачано обновление PKGi PS3 RUS MOD"
 
 #: pkgi.c:748
-msgid "act.dat no find"
-msgstr "act.dat не найден"
+msgid "The system is not activated!"
+msgstr "Система не активирована!"
 
 #: pkgi.c:751
-msgid "User:%d"
-msgstr "Пользователь:%d"
+msgid "Active user: %d"
+msgstr "Активный пользователь: %d"
+
+#: pkgi.c:814
+msgid "Act.dat not found, activate the console according"
+msgstr "Act.dat не найден, активируйте консоль согласно"
+
+msgid "to the instructions in the topic [FAQ] Game formats"
+msgstr "инструкции в теме [FAQ] Форматы игр"
+
+msgid "[install, mount, transfer, delete]"
+msgstr "[установить, смонтировать, перенести, удалить]"
 
 #: pkgi.c:1051
 msgid "Search"

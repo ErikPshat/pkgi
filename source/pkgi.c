@@ -535,10 +535,10 @@ static void pkgi_do_refresh(void)
     pkgi_draw_text((VITA_WIDTH - w) / 2, VITA_HEIGHT / 2, PKGI_COLOR_TEXT, text);
 }
 
-static void pkgi_do_head(const char* atxt)
+static void pkgi_do_head(void)
 {
     char title[256];
-    pkgi_snprintf(title, sizeof(title), "v%s :: %s :: %s", PKGI_VERSION, content_type_str(config.content),atxt);
+    pkgi_snprintf(title, sizeof(title), "v%s :: %s", PKGI_VERSION, content_type_str(config.content));
     pkgi_draw_text(0, 0, PKGI_COLOR_TEXT_HEAD, title);
 
     pkgi_draw_fill_rect(0, font_height, VITA_WIDTH, PKGI_MAIN_HLINE_HEIGHT, PKGI_COLOR_HLINE);
@@ -573,7 +573,7 @@ static void pkgi_do_head(const char* atxt)
     }
 }
 
-static void pkgi_do_tail(void)
+static void pkgi_do_tail(const char* atxt)
 {
     pkgi_draw_fill_rect_z(0, bottom_y - font_height/2, PKGI_FONT_Z, VITA_WIDTH, PKGI_MAIN_HLINE_HEIGHT, PKGI_COLOR_HLINE);
 
@@ -590,6 +590,7 @@ static void pkgi_do_tail(void)
         pkgi_snprintf(text, sizeof(text), "%s: %u (%u)", _("Count"), count, total);
     }
     pkgi_draw_text(0, bottom_y, PKGI_COLOR_TEXT_TAIL, text);
+	pkgi_draw_text(0, bottom_y+18, PKGI_COLOR_TEXT_TAIL, atxt);
 
     char size[64];
     pkgi_friendly_size(size, sizeof(size), pkgi_get_free_space());
@@ -598,7 +599,7 @@ static void pkgi_do_tail(void)
     pkgi_snprintf(free_str, sizeof(free_str), "%s: %s", _("Free"), size);
 
     int rightw = pkgi_text_width(free_str);
-    pkgi_draw_text(VITA_WIDTH - PKGI_MAIN_HLINE_EXTRA - rightw, bottom_y, PKGI_COLOR_TEXT_TAIL, free_str);
+    pkgi_draw_text(VITA_WIDTH - PKGI_MAIN_HLINE_EXTRA - rightw, bottom_y, PKGI_COLOR_TEXT_TAIL, free_str);	
 
     int left = pkgi_text_width(text) + PKGI_MAIN_TEXT_PADDING;
     int right = rightw + PKGI_MAIN_TEXT_PADDING;
@@ -735,14 +736,14 @@ int main(int argc, const char* argv[])
     pkgi_start_thread("refresh_thread", &pkgi_refresh_thread);
 
     pkgi_texture background = pkgi_load_image_buffer(background, png);
-	char atxt[20], amsg[140];
+	char atxt[35];
 	int chk;
 	if (chk_act_dat()==0) {	
-		pkgi_snprintf(atxt, sizeof(atxt), _("act.dat no find"));		
+		pkgi_snprintf(atxt, sizeof(atxt), _("The system is not activated!"));		
 		chk=0;
 	} else 
 	{	
-		pkgi_snprintf(atxt, sizeof(atxt), _("User:%d"), chk_act_dat());
+		pkgi_snprintf(atxt, sizeof(atxt), _("Active user: %d"), chk_act_dat());
 		chk=1;
 	}	
 
@@ -761,7 +762,7 @@ int main(int argc, const char* argv[])
             pkgi_db_configure(NULL, &config);
             state = StateMain;
         }
-        pkgi_do_head(atxt);
+        pkgi_do_head();
 				
         switch (state)
         {
@@ -788,13 +789,8 @@ int main(int argc, const char* argv[])
             break;
         }
 
-        pkgi_do_tail();
-		if (chk==0)
-		{
-		 pkgi_dialog_message(amsg, _("Act.dat not found, activate the console according\nto the instructions in the topic\n[FAQ] Game formats [install, mount, transfer, delete]"));
-		 chk=1;
-		}
-		
+        pkgi_do_tail(atxt);
+				
         if (pkgi_dialog_is_open())
         {
             pkgi_do_dialog(&input);
@@ -812,6 +808,14 @@ int main(int argc, const char* argv[])
             pkgi_db_configure(search_text, &config);
             reposition();			
         }
+		
+		if (chk==0)
+		{
+		 char etxt[150];
+		 pkgi_snprintf(etxt, sizeof(etxt), " %s\n%s\n%s", _("Act.dat not found, activate the console according"),_("to the instructions in the topic [FAQ] Game formats"),_("[install, mount, transfer, delete]"));	
+		 pkgi_dialog_error(etxt);
+		 chk=1;
+		}
 
         if (pkgi_menu_is_open())
         {

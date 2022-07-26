@@ -167,11 +167,23 @@ msgid "Successfully downloaded PKGi PS3 update"
 msgstr ""
 
 #: pkgi.c:748
-msgid "act.dat no find"
+msgid "The system is not activated!"
 msgstr ""
 
 #: pkgi.c:751
-msgid "User:%d"
+msgid "Active user: %d"
+msgstr ""
+
+#: pkgi.c:815
+msgid "Act.dat not found, activate the console according"
+msgstr ""
+
+#: pkgi.c:815
+msgid "to the instructions in the topic [FAQ] Game formats"
+msgstr ""
+
+#: pkgi.c:815
+msgid "[install, mount, transfer, delete]"
 msgstr ""
 
 #: pkgi.c:1051
