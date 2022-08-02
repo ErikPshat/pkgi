@@ -823,6 +823,27 @@ int pkgi_is_incomplete(const char* titleid)
     return (res == 0);
 }
 
+/*bool pkgi_dir_list(const char* path)
+{
+	bool ret = true;
+	int i;
+	sysFSStat stat;
+	string subPath;
+	
+	if( sysFsStat( path, &stat ) )
+		return false;
+	if( stat.st_mode & S_IFDIR )
+	{
+		s32 fd;
+		sysFSDirent entry;
+		u64 read;
+		while( !sysFsReaddir( fd, &entry , &read ) && read > 0 )
+		{
+//		 std::string subPath = path + entry.d_name;
+		}
+	}
+}*/
+
 int pkgi_dir_exists(const char* path)
 {
     LOG("checking if folder %s exists", path);
@@ -836,6 +857,7 @@ int pkgi_dir_exists(const char* path)
 
 int pkgi_f_exists(const char* name)
 {
+
 	FILE* fd = fopen(name, "rb");
     if (!fd)
     {

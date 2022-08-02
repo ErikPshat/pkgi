@@ -89,6 +89,18 @@ void pkgi_dialog_details(DbItem *item, const char* content_type)
     pkgi_dialog_unlock();
 }
 
+void pkgi_dialog_qr(DbItem *item, const char* text)
+{
+    pkgi_dialog_lock();
+	pkgi_snprintf(dialog_extra, sizeof(dialog_extra), "/dev_hdd0/game/NP00PKGI3/USRDIR/qr.png");
+    //if (!pkg_icon && pkgi_get_size(dialog_extra)) 
+        pkg_icon = pkgi_load_png_file(dialog_extra);
+    
+    pkgi_dialog_data_init(DialogDetails, "ВНИМАНИЕ!", text);
+    db_item = item;    
+    pkgi_dialog_unlock();
+}
+
 void pkgi_dialog_message(const char* title, const char* text)
 {
     pkgi_dialog_lock();
@@ -328,7 +340,7 @@ void pkgi_do_dialog(pkgi_input* input)
     }
     else if (local_type == DialogDetails)
     {
-        pkgi_draw_texture_z(pkg_icon, PKGI_DIALOG_HMARGIN + PKGI_DIALOG_PADDING + 425, PKGI_DIALOG_VMARGIN + PKGI_DIALOG_PADDING + 25, PKGI_DIALOG_TEXT_Z, 0.5);
+        pkgi_draw_texture_z(pkg_icon, PKGI_DIALOG_HMARGIN + PKGI_DIALOG_PADDING + 490, PKGI_DIALOG_VMARGIN + PKGI_DIALOG_PADDING + 25, PKGI_DIALOG_TEXT_Z, 0.5);
 
         pkgi_draw_text_z(PKGI_DIALOG_HMARGIN + PKGI_DIALOG_PADDING, PKGI_DIALOG_VMARGIN + PKGI_DIALOG_PADDING + font_height*2, PKGI_DIALOG_TEXT_Z, PKGI_COLOR_TEXT_DIALOG, local_text);
         pkgi_draw_text_z(PKGI_DIALOG_HMARGIN + PKGI_DIALOG_PADDING, PKGI_DIALOG_VMARGIN + PKGI_DIALOG_PADDING + font_height*5, PKGI_DIALOG_TEXT_Z, PKGI_COLOR_TEXT_DIALOG, local_extra);

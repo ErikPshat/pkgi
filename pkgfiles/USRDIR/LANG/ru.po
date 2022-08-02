@@ -198,7 +198,7 @@ msgid "to the instructions in the topic [FAQ] Game formats"
 msgstr "инструкции в теме [FAQ] Форматы игр"
 
 msgid "[install, mount, transfer, delete]"
-msgstr "[установить, смонтировать, перенести, удалить]"
+msgstr "[установка, монтирование, перенос, удаление]"
 
 #: pkgi.c:1051
 msgid "Search"

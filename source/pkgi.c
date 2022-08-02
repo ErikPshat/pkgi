@@ -815,8 +815,9 @@ int main(int argc, const char* argv[])
 		if (chk==0)
 		{
 		 char etxt[150];
+		 DbItem* item = pkgi_db_get(selected_item);		 
 		 pkgi_snprintf(etxt, sizeof(etxt), "%s\n%s\n%s", _("Act.dat not found, activate the console according"),_("to the instructions in the topic [FAQ] Game formats"),_("[install, mount, transfer, delete]"));	
-		 pkgi_dialog_error(etxt);
+         pkgi_dialog_qr(item, etxt);		 
 		 chk=1;
 		}
 
