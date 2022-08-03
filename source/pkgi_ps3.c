@@ -823,15 +823,15 @@ int pkgi_is_incomplete(const char* titleid)
     return (res == 0);
 }
 
-/*bool pkgi_dir_list(const char* path)
+/*int dir_list(const char* path)
 {
-	bool ret = true;
-	int i;
+	//bool ret = true;
+	//int i;
 	sysFSStat stat;
-	string subPath;
+	string subPath[8];
 	
 	if( sysFsStat( path, &stat ) )
-		return false;
+		return 0;
 	if( stat.st_mode & S_IFDIR )
 	{
 		s32 fd;
@@ -839,7 +839,7 @@ int pkgi_is_incomplete(const char* titleid)
 		u64 read;
 		while( !sysFsReaddir( fd, &entry , &read ) && read > 0 )
 		{
-//		 std::string subPath = path + entry.d_name;
+		 subPath = entry.d_name;
 		}
 	}
 }*/
@@ -855,16 +855,10 @@ int pkgi_dir_exists(const char* path)
     return 0;
 }
 
-int pkgi_f_exists(const char* name)
+bool pkgi_file_exists(const char* path)
 {
-
-	FILE* fd = fopen(name, "rb");
-    if (!fd)
-    {
-        return -1;
-    }
-	fclose(fd);
-    return 1;
+	sysFSStat entry;
+	return( sysFsStat( path, &entry ) == 0 );
 }
 
 int chk_act_dat()
@@ -876,7 +870,7 @@ int chk_act_dat()
 	for (int i = 1; i <= max_uid; i++)
 	{
 		snprintf(path, sizeof(path), "/dev_hdd0/home/%08d/exdata/act.dat", i);
-		if(pkgi_f_exists(path)==1) {
+		if(pkgi_file_exists(path)) {
         k=i;
 		break;
 		} else	k=0;
