@@ -823,15 +823,15 @@ int pkgi_is_incomplete(const char* titleid)
     return (res == 0);
 }
 
-/*int dir_list(const char* path)
+/*const char* dir_list(const char* path)
 {
 	//bool ret = true;
 	//int i;
 	sysFSStat stat;
-	string subPath[8];
+	const char* subPath;
 	
 	if( sysFsStat( path, &stat ) )
-		return 0;
+		return "";
 	if( stat.st_mode & S_IFDIR )
 	{
 		s32 fd;
@@ -842,6 +842,7 @@ int pkgi_is_incomplete(const char* titleid)
 		 subPath = entry.d_name;
 		}
 	}
+	return(subPath);
 }*/
 
 int pkgi_dir_exists(const char* path)
@@ -865,17 +866,18 @@ int chk_act_dat()
 {
 	int max_uid = 100;
 	char path[64];
-	int k=0;
+	int a=0;
 		
 	for (int i = 1; i <= max_uid; i++)
 	{
 		snprintf(path, sizeof(path), "/dev_hdd0/home/%08d/exdata/act.dat", i);
-		if(pkgi_file_exists(path)) {
-        k=i;
-		break;
-		} else	k=0;
+		if(pkgi_file_exists(path)) 
+		{
+		 a=i;
+		 break;
+		} 
 	}
-	return k;
+	return a;
 }
 
 int pkgi_is_installed(const char* content)
