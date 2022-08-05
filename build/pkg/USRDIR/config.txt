@@ -1,2 +1,0 @@
-url https://raw.githubusercontent.com/ErikPshat/pkgi/master/mylist.csv
-url_managers https://raw.githubusercontent.com/ErikPshat/pkgi/master/managers.csv
