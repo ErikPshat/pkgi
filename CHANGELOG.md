@@ -2,6 +2,11 @@
 
 All notable changes to the `pkgi-ps3` project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.3.220826](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.3.220826) - 2022-08-02
+* Изменен QR-код в сообщение о необходимости активации для быстрого перехода в тему
+* Музыка изменена.
+* Небольшое изменение в коде.
+
 ## [v1.2.3.220802](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.3.220802) - 2022-08-02
 * Добавлен QR-код в сообщение о необходимости активации для быстрого перехода в тему
 * Музыка по умолчанию выключена.

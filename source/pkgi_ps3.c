@@ -864,11 +864,10 @@ bool pkgi_file_exists(const char* path)
 
 int chk_act_dat()
 {
-	int max_uid = 100;
 	char path[64];
 	int a=0;
 		
-	for (int i = 1; i <= max_uid; i++)
+	for (int i = 1; i <= 0x100; i++)
 	{
 		snprintf(path, sizeof(path), "/dev_hdd0/home/%08d/exdata/act.dat", i);
 		if(pkgi_file_exists(path)) 
