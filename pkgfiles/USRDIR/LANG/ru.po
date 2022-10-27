@@ -99,12 +99,12 @@ msgid "Demos"
 msgstr "Демо"
 
 #: pkgi.c:235 pkgi_menu.c:135
-msgid "Managers"
-msgstr "Менеджеры"
-
-#: pkgi.c:236 pkgi_menu.c:136
 msgid "Apps"
 msgstr "Приложения"
+
+#: pkgi.c:236 pkgi_menu.c:136
+msgid "Managers"
+msgstr "Тюнинг"
 
 #: pkgi.c:237 pkgi_menu.c:137
 msgid "Cheats"

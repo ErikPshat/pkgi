@@ -42,13 +42,13 @@ typedef enum {
     DbFilterContentTheme    = 0x004000,
     DbFilterContentAvatar   = 0x008000,
     DbFilterContentDemo     = 0x010000,
-    DbFilterContentManager  = 0x020000,
-    DbFilterContentApp      = 0x040000,
+    DbFilterContentApp      = 0x020000,
+    DbFilterContentManager  = 0x040000,
     DbFilterContentCheat    = 0x080000,
     DbFilterContentUpdate   = 0x100000,
 
     DbFilterAllRegions = DbFilterRegionUSA | DbFilterRegionEUR | DbFilterRegionJPN | DbFilterRegionASA,
-    DbFilterAllContent = DbFilterContentGame | DbFilterContentRUS | DbFilterContentPS2 | DbFilterContentPS1 | DbFilterContentMinis | DbFilterContentDLC | DbFilterContentTheme | DbFilterContentAvatar | DbFilterContentDemo | DbFilterContentManager | DbFilterContentApp | DbFilterContentCheat | DbFilterContentUpdate,
+    DbFilterAllContent = DbFilterContentGame | DbFilterContentRUS | DbFilterContentPS2 | DbFilterContentPS1 | DbFilterContentMinis | DbFilterContentDLC | DbFilterContentTheme | DbFilterContentAvatar | DbFilterContentDemo | DbFilterContentApp | DbFilterContentManager | DbFilterContentCheat | DbFilterContentUpdate,
     DbFilterAll = DbFilterAllRegions | DbFilterAllContent | DbFilterInstalled | DbFilterMissing,
 } DbFilter;
 
@@ -63,8 +63,8 @@ typedef enum {
     ContentTheme,
     ContentAvatar,
     ContentDemo,
-    ContentManager,
     ContentApp,
+    ContentManager,
     ContentCheat,
     ContentUpdate,
 } ContentType;
