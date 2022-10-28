@@ -132,8 +132,8 @@ void pkgi_menu_start(int search_clear, const Config* config)
     content_entries[7].text = _("Themes");
     content_entries[8].text = _("Avatars");
     content_entries[9].text = _("Demos");
-    content_entries[11].text = _("Apps");
-    content_entries[10].text = _("Managers");
+    content_entries[10].text = _("Apps");
+    content_entries[11].text = _("Managers");
     content_entries[12].text = _("Cheats");
     content_entries[13].text = _("Updates");
 }
