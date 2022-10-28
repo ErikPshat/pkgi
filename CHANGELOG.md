@@ -4,6 +4,7 @@ All notable changes to the `pkgi-ps3` project will be documented in this file. T
 
 ## [v1.2.4.221028](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221028) - 2022-10-28
 * Небольшие правки в коде и в описании тюнинга
+* Перевод на другие языки поправлен
 
 ## [v1.2.4.221027](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221027) - 2022-10-27
 * Во вкладке Приложения теперь приложения и менеджеры
