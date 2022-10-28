@@ -95,7 +95,7 @@ msgid "Apps"
 msgstr ""
 
 #: pkgi.c:234 pkgi_menu.c:130
-msgid "Tools"
+msgid "Tuning"
 msgstr ""
 
 #: pkgi.c:235
@@ -160,6 +160,10 @@ msgstr ""
 
 #: pkgi.c:589
 msgid "Exit"
+msgstr ""
+
+#: pkgi.c:594
+msgid "L2 R2 change category, L1 R1 flip through the page"
 msgstr ""
 
 #: pkgi.c:678

@@ -103,7 +103,7 @@ msgid "Apps"
 msgstr "Приложения"
 
 #: pkgi.c:236 pkgi_menu.c:136
-msgid "Managers"
+msgid "Tuning"
 msgstr "Тюнинг"
 
 #: pkgi.c:237 pkgi_menu.c:137
@@ -177,6 +177,10 @@ msgstr "Детали"
 #: pkgi.c:589
 msgid "Exit"
 msgstr "Выход"
+
+#: pkgi.c:594
+msgid "L2 R2 change category, L1 R1 flip through the page"
+msgstr "L2 R2 изменить категорию, L1 R1 перелистнуть страницу"
 
 #: pkgi.c:678
 msgid "Successfully downloaded PKGi PS3 RUS MOD update"

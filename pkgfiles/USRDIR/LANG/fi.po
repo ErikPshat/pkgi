@@ -95,8 +95,8 @@ msgid "Apps"
 msgstr "Sovellukset"
 
 #: pkgi.c:234 pkgi_menu.c:130
-msgid "Tools"
-msgstr "Ty”kalut"
+msgid "Tuning"
+msgstr "Viritysta"
 
 #: pkgi.c:235
 msgid "Unknown"
@@ -161,6 +161,10 @@ msgstr "Tiedot"
 #: pkgi.c:589
 msgid "Exit"
 msgstr "Poistu"
+
+#: pkgi.c:594
+msgid "L2 R2 change category, L1 R1 flip through the page"
+msgstr "L2 R2 vaihda luokkaa, L1 R1 selaa sivua"
 
 #: pkgi.c:678
 msgid "Successfully downloaded PKGi PS3 update"

@@ -12,7 +12,6 @@
 #define PKGI_UTF8_T "\xac" // "\xfc" // "\xe2\x96\xb3" // 0x25b3
 #define PKGI_UTF8_S "\xad" // "\xfd" // "\xe2\x96\xa1" // 0x25a1
 
-
 #define PKGI_UTF8_INSTALLED "\x04" //"\xe2\x97\x8f" // 0x25cf
 #define PKGI_UTF8_PARTIAL   "\x09" //"\xe2\x97\x8b" // 0x25cb
 

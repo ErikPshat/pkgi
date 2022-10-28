@@ -232,9 +232,9 @@ static const char* content_type_str(ContentType content)
 		case ContentDLC: return _("DLCs");
 		case ContentTheme: return _("Themes");
 		case ContentAvatar: return _("Avatars");
-		case ContentDemo: return _("Demos");
+		case ContentDemo: return _("Demos");	
 		case ContentApp: return _("Apps");
-		case ContentManager: return _("Managers");
+		case ContentManager: return _("Tuning");									
 		case ContentCheat: return _("Cheats");
 		case ContentUpdate: return _("Updates");
 		default: return _("Unknown");
@@ -591,6 +591,8 @@ static void pkgi_do_tail(const char* atxt, uint32_t acolor)
     }
     pkgi_draw_text(0, bottom_y, PKGI_COLOR_TEXT_TAIL, text);
 	pkgi_draw_text(0, bottom_y+18, acolor, atxt);
+	pkgi_snprintf(text, sizeof(text), _("L2 R2 change category, L1 R1 flip through the page"));
+	pkgi_draw_text(280, bottom_y+18, PKGI_COLOR_TEXT_TAIL, text);
 
     char size[64];
     pkgi_friendly_size(size, sizeof(size), pkgi_get_free_space());

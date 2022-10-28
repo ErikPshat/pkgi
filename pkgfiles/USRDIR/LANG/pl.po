@@ -95,8 +95,8 @@ msgid "Apps"
 msgstr "Aplikacje"
 
 #: pkgi.c:234 pkgi_menu.c:130
-msgid "Tools"
-msgstr "Narzedzia"
+msgid "Tuning"
+msgstr "strojenie"
 
 #: pkgi.c:235
 msgid "Unknown"
@@ -161,6 +161,10 @@ msgstr "Szczegoly"
 #: pkgi.c:589
 msgid "Exit"
 msgstr "Wyjdz"
+
+#: pkgi.c:594
+msgid "L2 R2 change category, L1 R1 flip through the page"
+msgstr "L2 R2 zmień kategorię, L1 R1 przewiń stronę"
 
 #: pkgi.c:678
 msgid "Successfully downloaded PKGi PS3 update"
