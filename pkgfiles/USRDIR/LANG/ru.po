@@ -103,7 +103,7 @@ msgid "Apps"
 msgstr "Приложения"
 
 #: pkgi.c:236 pkgi_menu.c:136
-msgid "Tuning"
+msgid "Tunings"
 msgstr "Тюнинг"
 
 #: pkgi.c:237 pkgi_menu.c:137
