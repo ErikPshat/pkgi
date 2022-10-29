@@ -232,9 +232,9 @@ static const char* content_type_str(ContentType content)
 		case ContentDLC: return _("DLCs");
 		case ContentTheme: return _("Themes");
 		case ContentAvatar: return _("Avatars");
-		case ContentDemo: return _("Demos");	
+		case ContentDemo: return _("Demos");
 		case ContentApp: return _("Apps");
-		case ContentManager: return _("Tuning");									
+		case ContentTuning: return _("Tunings");
 		case ContentCheat: return _("Cheats");
 		case ContentUpdate: return _("Updates");
 		default: return _("Unknown");

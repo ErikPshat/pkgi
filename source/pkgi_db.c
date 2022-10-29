@@ -417,7 +417,7 @@ static int matches(GameRegion region, ContentType content, uint32_t filter)
         || (content == ContentAvatar && (filter & DbFilterContentAvatar))
         || (content == ContentDemo && (filter & DbFilterContentDemo))
         || (content == ContentApp && (filter & DbFilterContentApp))
-        || (content == ContentManager && (filter & DbFilterContentManager))
+        || (content == ContentTuning && (filter & DbFilterContentTuning))
         || (content == ContentCheat && (filter & DbFilterContentCheat))
         || (content == ContentUpdate && (filter & DbFilterContentUpdate))
         || (content == ContentUnknown));
