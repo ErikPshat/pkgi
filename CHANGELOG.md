@@ -2,6 +2,13 @@
 
 All notable changes to the `pkgi-ps3` project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.4.221109](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221109) - 2022-11-09
+* Добавлен 21 чит
+* Добавлены волны и изменения XMB (замена иконок HEN)
+
+## [v1.2.4.221101](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221028) - 2022-11-01
+* Добавлена игра на русском Tom Clancy’s Splinter Cell Blacklist [NPEB01379][FullRus]
+
 ## [v1.2.4.221028](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221028) - 2022-10-28
 * Небольшие правки в коде и в описании тюнинга
 * Перевод на другие языки поправлен
