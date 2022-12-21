@@ -2,6 +2,30 @@
 
 All notable changes to the `pkgi-ps3` project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.4.221221](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221221) - 2022-12-21
+* Добавлено: Minecraft: PlayStation 3 Edition [DLC58][ISO][BLES01976]
+* Добавлено: Beyond Two Souls [FullRUS][NPEA00513]
+* Добавлено: SingStar Ultimate Party - Короли вечеринок [ISO][BCES02025]
+
+## [v1.2.4.221204](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221204) - 2022-12-04
+* Добавлено: sysmenu-ofw в раздел тюнинг - делает раздел настроек и приветствие стандартным.
+* Добавлено: AMY v1.02 [FullGAME][RusText]
+* Добавлено: Dynamic Moonlight [NPEP00074][2013042510410001] (Тема)
+* Исправлено: MONOPOLY PLUS [GAME + 4DLC][FullRus]
+* Добавлено: Shadowrun [SEGA][RusText]
+* Добавлено: Super Mario Bros [NES][RusText]
+
+## [v1.2.4.221120](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221120) - 2022-11-20
+* добавлен Google Drive
+
+## [v1.2.4.221119](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221119) - 2022-11-19
+* Изменение описание в тюнинге (для HEN или CFW), добавление туда нескольких файлов
+
+## [v1.2.4.221113](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221113) - 2022-11-13
+В тюнинг добавлено:
+* change_update_server_to_489HFW.pkg - заменяет файл ps3-updatelist.txt для обновления на HFW 4.89 через сеть (нужен webman).
+* original_update_plugin-489.pkg - для снятия блока обновления через сеть
+
 ## [v1.2.4.221109](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221109) - 2022-11-09
 * Добавлен 21 чит
 * Добавлены волны и изменения XMB (замена иконок HEN)
