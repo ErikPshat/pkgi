@@ -3,8 +3,8 @@
 All notable changes to the `pkgi-ps3` project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [v1.2.4.221221](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221221) - 2022-12-21
-* Добавлено: Minecraft: PlayStation 3 Edition [DLC58][ISO][BLES01976]
 * Добавлено: Beyond Two Souls [FullRUS][NPEA00513]
+* Добавлено: Minecraft: PlayStation 3 Edition [DLC58][ISO][BLES01976]
 * Добавлено: SingStar Ultimate Party - Короли вечеринок [ISO][BCES02025]
 
 ## [v1.2.4.221204](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221204) - 2022-12-04
