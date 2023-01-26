@@ -5,11 +5,7 @@
 #include "pkgi_dialog.h"
 
 #define PKGI_UPDATE_URL     "https://api.github.com/repos/ErikPshat/pkgi/releases/latest"
-<<<<<<< Updated upstream
-#define PKGI_VERSION        "1.2.4.230122"
-=======
 #define PKGI_VERSION        "1.2.4.230126"
->>>>>>> Stashed changes
 
 #define PKGI_BUTTON_SELECT 0x00010000
 #define PKGI_BUTTON_START  0x00080000
