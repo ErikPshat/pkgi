@@ -2,6 +2,7 @@
 
 All notable changes to the `pkgi-ps3` project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+<<<<<<< Updated upstream
 ## [v1.2.4.221221](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221221) - 2022-12-21
 * Добавлено: Beyond Two Souls [FullRUS][NPEA00513]
 * Добавлено: Minecraft: PlayStation 3 Edition [DLC58][ISO][BLES01976]
@@ -25,11 +26,22 @@ All notable changes to the `pkgi-ps3` project will be documented in this file. T
 В тюнинг добавлено:
 * change_update_server_to_489HFW.pkg - заменяет файл ps3-updatelist.txt для обновления на HFW 4.89 через сеть (нужен webman).
 * original_update_plugin-489.pkg - для снятия блока обновления через сеть
+=======
+## [v1.2.4.230126](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.230126) - 2023-01-26
+
+### Добавлено
+* Явная поддержка FTP через TLS
+* Увеличен лимит памяти базы данных до 32 Мб
+* Переменная ширина меню (автоматически настраивается на ширину переведенного текста)
+
+### Исправлено
+* Индикатор выполнения не показывает правильные значения при возобновлении файла
+* Правильное соотношение сторон экрана (проблема с Tiny3D)
+>>>>>>> Stashed changes
 
 ## [v1.2.4.221109](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221109) - 2022-11-09
 * Добавлен 21 чит
 * Добавлены волны и изменения XMB (замена иконок HEN)
-* Добавлены игры: Sacred 3, DLC и фикс на DLC
 
 ## [v1.2.4.221101](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.221028) - 2022-11-01
 * Добавлена игра на русском Tom Clancy’s Splinter Cell Blacklist [NPEB01379][FullRus]

@@ -14,6 +14,7 @@ static MenuResult menu_result;
 
 static int32_t menu_width;
 static int32_t menu_delta;
+static int32_t pkgi_menu_width = 0;
 
 typedef enum {
     MenuSearch,
@@ -95,6 +96,15 @@ void pkgi_menu_get(Config* config)
     *config = menu_config;
 }
 
+static void set_max_width(const MenuEntry* entries, int size)
+{
+    for (int j, i = 0; i < size; i++)
+    {
+        if ((j = pkgi_text_width(entries[i].text) + PKGI_MENU_LEFT_PADDING*2) > pkgi_menu_width)
+            pkgi_menu_width = j;
+    }
+}
+
 void pkgi_menu_start(int search_clear, const Config* config)
 {
     menu_search_clear = search_clear;
@@ -136,6 +146,13 @@ void pkgi_menu_start(int search_clear, const Config* config)
     content_entries[11].text = _("Tunings");
     content_entries[12].text = _("Cheats");
     content_entries[13].text = _("Updates");
+	
+	if (pkgi_menu_width)
+        return;
+
+    pkgi_menu_width = PKGI_MENU_WIDTH;
+    set_max_width(menu_entries, PKGI_COUNTOF(menu_entries));
+    set_max_width(content_entries, PKGI_COUNTOF(content_entries));
 }
 
 int pkgi_do_menu(pkgi_input* input)
@@ -150,17 +167,17 @@ int pkgi_do_menu(pkgi_input* input)
             menu_delta = 0;
             return 0;
         }
-        else if (menu_delta > 0 && menu_width >= PKGI_MENU_WIDTH)
+        else if (menu_delta > 0 && menu_width >= pkgi_menu_width)
         {
-            menu_width = PKGI_MENU_WIDTH;
+            menu_width = pkgi_menu_width;
             menu_delta = 0;
         }
     }
 
     if (menu_width != 0)
     {
-        pkgi_draw_fill_rect_z(VITA_WIDTH - menu_width, 25, PKGI_MENU_Z, menu_width, PKGI_MENU_HEIGHT, PKGI_COLOR_MENU_BACKGROUND);
-        pkgi_draw_rect_z(VITA_WIDTH - menu_width, 25, PKGI_MENU_Z, menu_width, PKGI_MENU_HEIGHT, PKGI_COLOR_MENU_BORDER);
+        pkgi_draw_fill_rect_z(VITA_WIDTH - (menu_width + PKGI_MAIN_HMARGIN), PKGI_MAIN_VMARGIN, PKGI_MENU_Z, menu_width, PKGI_MENU_HEIGHT, PKGI_COLOR_MENU_BACKGROUND);
+        pkgi_draw_rect_z(VITA_WIDTH - (menu_width + PKGI_MAIN_HMARGIN), PKGI_MAIN_VMARGIN, PKGI_MENU_Z, menu_width, PKGI_MENU_HEIGHT, PKGI_COLOR_MENU_BORDER);
     }
 
     if (input->active & PKGI_BUTTON_UP)
@@ -269,7 +286,7 @@ int pkgi_do_menu(pkgi_input* input)
         }
     }
 
-    if (menu_width != PKGI_MENU_WIDTH)
+    if (menu_width != pkgi_menu_width)
     {
         return 1;
     }
@@ -299,9 +316,7 @@ int pkgi_do_menu(pkgi_input* input)
             y += font_height;
         }
 
-        uint32_t color = menu_selected == i ? PKGI_COLOR_TEXT_MENU_SELECTED : PKGI_COLOR_TEXT_MENU;
-
-        int x = VITA_WIDTH - PKGI_MENU_WIDTH + PKGI_MENU_LEFT_PADDING;
+        int x = VITA_WIDTH - (pkgi_menu_width + PKGI_MAIN_HMARGIN) + PKGI_MENU_LEFT_PADDING;
 
         char text[64];
         if (type == MenuSearch || type == MenuSearchClear || type == MenuText || type == MenuRefresh)
@@ -348,7 +363,7 @@ int pkgi_do_menu(pkgi_input* input)
             pkgi_snprintf(text, sizeof(text), PKGI_UTF8_CLEAR " %s", content_entries[menu_config.content].text);
         }
         
-        pkgi_draw_text_z(x, y, PKGI_MENU_TEXT_Z, color, text);
+        pkgi_draw_text_z(x, y, PKGI_MENU_TEXT_Z, (menu_selected == i) ? PKGI_COLOR_TEXT_MENU_SELECTED : PKGI_COLOR_TEXT_MENU, text);
 
         y += font_height;
     }

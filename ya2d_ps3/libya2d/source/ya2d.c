@@ -16,6 +16,9 @@
 		ioPadInit(7);
 	//Tiny 3D
 			tiny3d_Init(YA2D_VERTEX_BUFFER_MEMORY);
+			tiny3d_UserViewport(1, 0, 0, // 2D position
+				(float) (Video_Resolution.width / 848.0f),  (float) (Video_Resolution.height / 512.0f),   // 2D scale
+				(float) (Video_Resolution.width / 1920.0f), (float) (Video_Resolution.height / 1080.0f)); // 3D scale
 			
 			ya2d_textureMem = tiny3d_AllocTexture(YA2D_RSX_TEXTURE_MEMORY); 
 			ya2d_texturePointer = ya2d_textureMem;

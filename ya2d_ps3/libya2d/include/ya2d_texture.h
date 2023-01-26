@@ -38,13 +38,14 @@ ya2d_Texture* ya2d_loadPNGfromBuffer(const void *buffer, u32 buf_size);
 ya2d_Texture* ya2d_loadJPGfromFile(const char* filename);
 ya2d_Texture* ya2d_loadJPGfromBuffer(const void *buffer, u32 buf_size);
 
-void ya2d_drawTextureZ(const ya2d_Texture *texp, int x, int y, int z, float scale);
+void ya2d_drawTextureEx(const ya2d_Texture *texp, float x, float y, float z, float w, float h);
 void ya2d_drawBlendTextureZ(const ya2d_Texture *texp, int x, int y, int z, float scale, u32 color);
 void ya2d_drawRotateTextureZ(const ya2d_Texture *texp, int x, int y, int z, float angle);
 
-#define ya2d_drawTexture(texp, x, y)				ya2d_drawTextureZ(texp, x, y, YA2D_DEFAULT_Z, 1.0f)
-#define ya2d_drawRotateTexture(texp, x, y, angle)	ya2d_drawRotateTextureZ(texp, x, y, YA2D_DEFAULT_Z, angle)
-#define ya2d_drawBlendTexture(texp, x, y, color)	ya2d_drawBlendTextureZ(texp, x, y, YA2D_DEFAULT_Z, 1.0f, color)
+#define ya2d_drawTexture(texp, x, y)                ya2d_drawTextureEx(texp, x, y, YA2D_DEFAULT_Z, (texp)->imageWidth, (texp)->imageHeight)
+#define ya2d_drawRotateTexture(texp, x, y, angle)   ya2d_drawRotateTextureZ(texp, x, y, YA2D_DEFAULT_Z, angle)
+#define ya2d_drawBlendTexture(texp, x, y, color)    ya2d_drawBlendTextureZ(texp, x, y, YA2D_DEFAULT_Z, 1.0f, color)
+#define ya2d_drawTextureZ(texp, x, y, z, scale)     ya2d_drawTextureEx(texp, x, y, z, (texp)->imageWidth * scale, (texp)->imageHeight * scale)
 
 
 #endif

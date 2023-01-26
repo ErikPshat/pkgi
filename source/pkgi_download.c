@@ -54,7 +54,7 @@ static uint32_t	queue_task_id 	= 10000002;
 static uint32_t	install_task_id = 80000002;
 
 
-uint32_t get_task_dir_id(const char* dir, uint32_t tid)
+static uint32_t get_task_dir_id(const char* dir, uint32_t tid)
 {
 	char path[128] = "";
 	int found = 0;
@@ -148,7 +148,7 @@ static int create_queue_pdb_files(void)
 	return 1;
 }
 
-int create_install_pdb_files(const char *path, uint64_t size)
+static int create_install_pdb_files(const char *path, uint64_t size)
 {
     void *fp1;
     void *fp2;
@@ -285,7 +285,8 @@ static size_t write_verify_data(void *buffer, size_t size, size_t nmemb, void *s
 
     if (pkgi_write(item_file, buffer, realsize))
     {
-        sha256_update(&sha, buffer, realsize);
+        download_offset += realsize;
+		sha256_update(&sha, buffer, realsize);
         return (realsize);
     }
 
@@ -315,18 +316,17 @@ static int create_dummy_pkg(void)
 
 static int queue_pkg_task(void)
 {
-	char pszPKGDir[256];
-	
-    initial_offset = 0;
-    LOG("requesting %s @ %llu", db_item->url, 0);
-    http = pkgi_http_get(db_item->url, db_item->content, 0);
+    char pszPKGDir[256];
+    int64_t http_length;
+
+    LOG("requesting %s @ %llu", db_item->url, initial_offset);
+    http = pkgi_http_get(db_item->url, db_item->content, initial_offset);
     if (!http)
     {
     	pkgi_dialog_error(_("Could not send HTTP request"));
         return 0;
     }
 
-    int64_t http_length;
     if (!pkgi_http_response_length(http, &http_length))
     {
         pkgi_dialog_error(_("HTTP request failed"));
@@ -381,7 +381,8 @@ static int queue_pkg_task(void)
 
 static void download_start(void)
 {
-    LOG("resuming pkg download from %llu offset", download_offset);
+    LOG("resuming pkg download from %llu offset", initial_offset);
+    download_offset = initial_offset;
     download_resume = 0;
     info_update = pkgi_time_msec() + 1000;
     pkgi_dialog_set_progress_title(_("Скачивание..."));
@@ -391,9 +392,8 @@ static int download_data(void)
 {
     if (!http)
     {
-        initial_offset = download_offset;
-        LOG("requesting %s @ %llu", db_item->url, download_offset);
-        http = pkgi_http_get(db_item->url, db_item->content, download_offset);
+        LOG("requesting %s @ %llu", db_item->url, initial_offset);
+        http = pkgi_http_get(db_item->url, db_item->content, initial_offset);
         if (!http)
         {
             pkgi_dialog_error(_("Could not send HTTP request"));
@@ -413,7 +413,7 @@ static int download_data(void)
         }
 
         download_size = http_length;
-        total_size = download_size;
+		total_size = initial_offset + download_size;
 
         if (!pkgi_check_free_space(http_length))
         {
@@ -421,7 +421,7 @@ static int download_data(void)
             return 0;
         }
 
-        LOG("http response length = %lld, total pkg size = %llu", http_length, download_size);
+        LOG("http response length = %lld, total pkg size = %llu", http_length, total_size);
         info_start = pkgi_time_msec();
         info_update = pkgi_time_msec() + 500;
     }
@@ -492,10 +492,11 @@ static int download_pkg_file(void)
 
     pkgi_strncpy(item_name, sizeof(item_name), root);
     pkgi_snprintf(item_path, sizeof(item_path), "%s/%s", pkgi_get_temp_folder(), root);
+	LOG("downloading %s", item_name);
 
     if (download_resume)
     {
-        download_offset = pkgi_get_size(item_path);
+        initial_offset = pkgi_get_size(item_path);
         if (!resume_partial_file()) goto bail;
         download_start();
     }
@@ -637,6 +638,7 @@ int pkgi_download(const DbItem* item, const int background_dl)
     item_file = NULL;
     download_size = 0;
     download_offset = 0;
+	initial_offset = 0;
     db_item = item;
 
     dialog_extra[0] = 0;
