@@ -694,7 +694,9 @@ static void pkgi_update_check_thread(void)
     
     if (pkgi_download(&update_item, 0) && install(update_item.content))
     {
-        pkgi_dialog_message(update_item.name, _("Successfully downloaded PKGi PS3 RUS MOD update"));		
+        char etxt[150];		
+		pkgi_snprintf(etxt, sizeof(etxt), "%s\n\n%s", _("Successfully downloaded PKGi PS3 RUS MOD update."), _("Install it via the menu item Manage PKG files"));	
+		pkgi_dialog_message(update_item.name, etxt);		
         LOG("update downloaded!");
     }
 

@@ -167,8 +167,11 @@ msgid "L2 R2 change category, L1 R1 flip through the page"
 msgstr "L2 R2 cambia categoria, L1 R1 sfoglia la pagina"
 
 #: pkgi.c:678
-msgid "Successfully downloaded PKGi PS3 update"
-msgstr "Aggiornamento di PKGi PS3 scaricato"
+msgid "Successfully downloaded PKGi PS3 RUS MOD update."
+msgstr "Aggiornamento scaricato con successo PKGi PS3 RUS MOD."
+
+msgid "Install it via the menu item Manage PKG files"
+msgstr "Installalo tramite la voce di menu * Gestisci file PKG"
 
 #: pkgi.c:814
 msgid "Act.dat not found, activate the console according"

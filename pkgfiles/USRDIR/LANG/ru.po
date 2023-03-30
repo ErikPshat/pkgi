@@ -180,11 +180,14 @@ msgstr "Выход"
 
 #: pkgi.c:594
 msgid "L2 R2 change category, L1 R1 flip through the page"
-msgstr "L2 R2 изменить категорию, L1 R1 перелистнуть страницу"
+msgstr "L2 R2 - изменить категорию, L1 R1 - листать страницы"
 
 #: pkgi.c:678
-msgid "Successfully downloaded PKGi PS3 RUS MOD update"
-msgstr "Успешно скачано обновление PKGi PS3 RUS MOD"
+msgid "Successfully downloaded PKGi PS3 RUS MOD update."
+msgstr "Успешно скачано обновление PKGi PS3 RUS MOD."
+
+msgid "Install it via the menu item Manage PKG files"
+msgstr "Установите его через пункт меню * Управление файлами PKG"
 
 #: pkgi.c:748
 msgid "The system is not activated!"
