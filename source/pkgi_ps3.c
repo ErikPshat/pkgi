@@ -869,7 +869,7 @@ int chk_act_dat()
 	char path[64];
 	int a=0;
 		
-	for (int i = 1; i <= 0x100; i++)
+	for (int i = 1; i <= 0x250; i++)
 	{
 		snprintf(path, sizeof(path), "/dev_hdd0/home/%08d/exdata/act.dat", i);
 		if(pkgi_file_exists(path)) 
