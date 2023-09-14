@@ -849,7 +849,7 @@ int pkgi_is_incomplete(const char* titleid)
 
 int pkgi_dir_exists(const char* path)
 {
-    LOG("checking if folder %s exists", path);
+ //   LOG("checking if folder %s exists", path);
 
     struct stat sb;
     if ((stat(path, &sb) == 0) && S_ISDIR(sb.st_mode)) {
@@ -868,16 +868,21 @@ int chk_act_dat()
 {
 	char path[64];
 	int a=0;
-		
-	for (int i = 1; i <= 0x250; i++)
-	{
-		snprintf(path, sizeof(path), "/dev_hdd0/home/%08d/exdata/act.dat", i);
-		if(pkgi_file_exists(path)) 
+	
+	for (int i = 1; i <= 0x200; i++)
+	{	
+		sprintf(path, "/dev_hdd0/home/%08i/exdata", i);
+		if(pkgi_dir_exists(path)) 
 		{
-		 a=i;
-		 break;
+		 snprintf(path, sizeof(path), "/dev_hdd0/home/%08d/exdata/act.dat", i);	
+		 if(pkgi_file_exists(path)) 
+		 {
+		  a=i;
+		  break;
+		 }
 		} 
 	}
+
 	return a;
 }
 
