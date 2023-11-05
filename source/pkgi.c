@@ -667,7 +667,7 @@ static void pkgi_update_check_thread(void)
 
     json_object * jobj = json_tokener_parse(buffer);
 
-    if ((value = json_parse(jobj, "name")) == NULL || !pkgi_memequ("PKGi PS3 RUS MOD", value, 8) || pkgi_stricmp(PKGI_VERSION, value+18) == 0)
+    if ((value = json_parse(jobj, "name")) == NULL || !pkgi_memequ("PKGi PS3 RUS MOD", value, 8) || pkgi_stricmp(PKGI_VERSION, value+18) > 0 || pkgi_stricmp(PKGI_VERSION, value+18) == 0)
     {
         LOG("no new version available");
         pkgi_thread_exit();
@@ -814,7 +814,7 @@ int main(int argc, const char* argv[])
 		 char etxt[150];
 		 DbItem* item = pkgi_db_get(selected_item);		 
 		 pkgi_snprintf(etxt, sizeof(etxt), "%s\n%s\n%s", _("Act.dat not found, activate the console according"),_("to the instructions in the topic [FAQ] Game formats"),_("[install, mount, transfer, delete]"));	
-         pkgi_dialog_qr(item, etxt);		 
+         pkgi_dialog_qr(item, etxt, "/dev_hdd0/game/NP00PKGI3/USRDIR/qr.png");		 
 		 chk=1;
 		}
 

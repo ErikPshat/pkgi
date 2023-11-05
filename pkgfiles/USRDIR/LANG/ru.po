@@ -180,14 +180,14 @@ msgstr "Выход"
 
 #: pkgi.c:594
 msgid "L2 R2 change category, L1 R1 flip through the page"
-msgstr "L2 R2 - изменить категорию, L1 R1 - листать страницы"
+msgstr "L2 R2 изменить категорию, L1 R1 перелистнуть страницу"
 
 #: pkgi.c:678
 msgid "Successfully downloaded PKGi PS3 RUS MOD update."
 msgstr "Успешно скачано обновление PKGi PS3 RUS MOD."
 
 msgid "Install it via the menu item Manage PKG files"
-msgstr "Установите его через пункт меню * Управление файлами PKG"
+msgstr "Установите его через пункт меню  Управление файлами PKG"
 
 #: pkgi.c:748
 msgid "The system is not activated!"
@@ -275,13 +275,22 @@ msgstr "Установка"
 msgid "ETA"
 msgstr "Осталось"
 
-#: pkgi_download.c:310 pkgi_download.c:392
-msgid "Could not send HTTP request"
-msgstr "Не удалось отправить HTTP-запрос"
+#: pkgi_download.c:320 pkgi_download.c:400
+msgid "Could not send HTTP request. The file is temporarily unavailable!"
+msgstr "Не удалось отправить HTTP-запрос. Файл временно недоступен!"
+
+msgid "The connection failed or the file is missing or blocked"
+msgstr "Сбой  соединения  или  файл отсутствует, либо заблокирован"
+
+msgid "due to Yandex limits being enabled. Download from pspx.ru the:"
+msgstr "из-за лимита Яндекса. Скачайте с форума pspx.ru,  из темы:"
+
+msgid "'Direct Download games HEN/CFW' topic."
+msgstr "'Прямое скачивание PS3 игр [HEN/CFW]'"
 
 #: pkgi_download.c:332 pkgi_download.c:406
 msgid "HTTP request failed"
-msgstr "HTTP-запрос не удался"
+msgstr "HTTP-запрос не удался. Качайте с форума."
 
 #: pkgi_download.c:322 pkgi_download.c:404
 msgid "HTTP response has unknown length"

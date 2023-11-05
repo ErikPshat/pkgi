@@ -41,7 +41,7 @@
 #define ANALOG_MIN          (ANALOG_CENTER - ANALOG_THRESHOLD)
 #define ANALOG_MAX          (ANALOG_CENTER + ANALOG_THRESHOLD)
 
-#define PKGI_USER_AGENT "Mozilla/5.0 (PLAYSTATION 3; 1.00)"
+#define PKGI_USER_AGENT "Download Master"
 
 
 struct pkgi_http
@@ -868,6 +868,10 @@ int chk_act_dat()
 {
 	char path[64];
 	int a=0;
+	
+	snprintf(path, sizeof(path), "/dev_hdd0/game/NP00PKGI3/USRDIR/noact.txt");	
+	if(pkgi_file_exists(path)) return 1;
+
 	
 	for (int i = 1; i <= 0x200; i++)
 	{	

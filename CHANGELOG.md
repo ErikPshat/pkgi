@@ -2,6 +2,15 @@
 
 All notable changes to the `pkgi-ps3` project will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.5.231104](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.5.231104) - 2023-11-04
+* Обновлена база, теперь в ней 27 тыс. элементов (игр, длс, тем и прочего), новые элементы имеют размер файла и sha256
+
+## [v1.2.5.231031](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.231031) - 2023-10-31
+* Обновлена база (добавлено около 4 тыс. элементов)
+* Заменено сообщение об ошибке http для лучшего понимания почему оно может быть
+* Обновляет версию pkgi только когда текущая меньше (раньше просто при различии)
+* Если положить файл /dev_hdd0/game/NP00PKGI3/USRDIR/noact.txt, то прервет проверку на наличие активации (решение проблем с ssd) 
+
 ## [v1.2.4.230126](https://github.com/ErikPshat/pkgi/releases/tag/v1.2.4.230126) - 2023-01-26
 
 ### Добавлено

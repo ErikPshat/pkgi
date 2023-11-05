@@ -171,7 +171,7 @@ msgid "Successfully downloaded PKGi PS3 RUS MOD update."
 msgstr "Aggiornamento scaricato con successo PKGi PS3 RUS MOD."
 
 msgid "Install it via the menu item Manage PKG files"
-msgstr "Installalo tramite la voce di menu * Gestisci file PKG"
+msgstr "Installalo tramite la voce di menu Gestisci file PKG"
 
 #: pkgi.c:814
 msgid "Act.dat not found, activate the console according"

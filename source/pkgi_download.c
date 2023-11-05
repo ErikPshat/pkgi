@@ -25,6 +25,7 @@
 
 static char root[256];
 static char resume_file[256];
+static uint32_t selected_item;
 
 static pkgi_http* http;
 static const DbItem* db_item;
@@ -317,19 +318,22 @@ static int create_dummy_pkg(void)
 static int queue_pkg_task(void)
 {
     char pszPKGDir[256];
+	char etxt[255];
+	DbItem* item = pkgi_db_get(selected_item);
+	pkgi_snprintf(etxt, sizeof(etxt), "%s\n\n%s\n%s\n%s", _("Could not send HTTP request. The file is temporarily unavailable!"),_("The connection failed or the file is missing or blocked"), _("due to Yandex limits being enabled. Download from pspx.ru the:"),_("'Direct Download games HEN/CFW' topic."));	
     int64_t http_length;
 
     LOG("requesting %s @ %llu", db_item->url, initial_offset);
     http = pkgi_http_get(db_item->url, db_item->content, initial_offset);
     if (!http)
     {
-    	pkgi_dialog_error(_("Could not send HTTP request"));
+		pkgi_dialog_qr(item, etxt, "/dev_hdd0/game/NP00PKGI3/USRDIR/qr2.png");
         return 0;
     }
 
     if (!pkgi_http_response_length(http, &http_length))
     {
-        pkgi_dialog_error(_("HTTP request failed"));
+        pkgi_dialog_qr(item, etxt, "/dev_hdd0/game/NP00PKGI3/USRDIR/qr2.png");
         return 0;
     }
     if (http_length < 0)
@@ -394,16 +398,19 @@ static int download_data(void)
     {
         LOG("requesting %s @ %llu", db_item->url, initial_offset);
         http = pkgi_http_get(db_item->url, db_item->content, initial_offset);
+		char etxt[255];
+		DbItem* item = pkgi_db_get(selected_item);
+		pkgi_snprintf(etxt, sizeof(etxt), "%s\n\n%s\n%s\n%s", _("Could not send HTTP request. The file is temporarily unavailable!"),_("The connection failed or the file is missing or blocked"), _("due to Yandex limits being enabled. Download from pspx.ru the:"),_("'Direct Download games HEN/CFW' topic."));	
         if (!http)
         {
-            pkgi_dialog_error(_("Could not send HTTP request"));
+            pkgi_dialog_qr(item, etxt, "/dev_hdd0/game/NP00PKGI3/USRDIR/qr2.png");
             return 0;
         }
 
         int64_t http_length;
         if (!pkgi_http_response_length(http, &http_length))
         {
-            pkgi_dialog_error(_("HTTP request failed"));
+            pkgi_dialog_qr(item, etxt, "/dev_hdd0/game/NP00PKGI3/USRDIR/qr2.png");
             return 0;
         }
         if (http_length < 0)

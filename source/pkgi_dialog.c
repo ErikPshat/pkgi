@@ -89,10 +89,10 @@ void pkgi_dialog_details(DbItem *item, const char* content_type)
     pkgi_dialog_unlock();
 }
 
-void pkgi_dialog_qr(DbItem *item, const char* text)
+void pkgi_dialog_qr(DbItem *item, const char* text, const char* fpatch)
 {
     pkgi_dialog_lock();
-	pkgi_snprintf(dialog_extra, sizeof(dialog_extra), "/dev_hdd0/game/NP00PKGI3/USRDIR/qr.png");
+	pkgi_snprintf(dialog_extra, sizeof(dialog_extra), fpatch);
     //if (!pkg_icon && pkgi_get_size(dialog_extra)) 
         pkg_icon = pkgi_load_png_file(dialog_extra);
     
