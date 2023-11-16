@@ -193,6 +193,10 @@ msgstr "Установите его через пункт меню  Управление файлами PKG"
 msgid "The system is not activated!"
 msgstr "Система не активирована!"
 
+#: pkgi.c:748
+msgid "Activation check disabled"
+msgstr "Выключена проверка на активацию"
+
 #: pkgi.c:751
 msgid "Active user: %d"
 msgstr "Активный пользователь: %d"
