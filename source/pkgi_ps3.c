@@ -870,7 +870,7 @@ int chk_act_dat()
 	int a=0;
 	
 	snprintf(path, sizeof(path), "/dev_hdd0/game/NP00PKGI3/USRDIR/noact.txt");	
-	if(pkgi_file_exists(path)) return 1;
+	if(pkgi_file_exists(path)) return 555;
 
 	
 	for (int i = 1; i <= 0x200; i++)

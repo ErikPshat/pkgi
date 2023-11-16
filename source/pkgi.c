@@ -736,17 +736,26 @@ int main(int argc, const char* argv[])
 	char atxt[35];
 	int chk;
 	uint32_t acolor;
-	if (chk_act_dat()==0) {	
-		pkgi_snprintf(atxt, sizeof(atxt), _("The system is not activated!"));		
-		chk=0;
-		acolor=PKGI_COLOR_TEXT_ERROR;
-	} else 
-	{	
-		pkgi_snprintf(atxt, sizeof(atxt), _("Active user: %d"), chk_act_dat());
-		chk=1;
-		acolor=PKGI_COLOR_TEXT_DIALOG;
-	}	
-
+	
+	switch (chk_act_dat())
+        {
+        case 0: 
+			pkgi_snprintf(atxt, sizeof(atxt), _("The system is not activated!")); 
+			chk=0;
+			acolor=PKGI_COLOR_TEXT_ERROR; 
+			break;
+        case 555: 
+			pkgi_snprintf(atxt, sizeof(atxt), _("Activation check disabled")); 
+			chk=1; 
+			acolor=PKGI_COLOR_TEXT_DIALOG; 
+			break;        
+        default: 
+			pkgi_snprintf(atxt, sizeof(atxt), _("Active user: %d"), chk_act_dat()); 
+			chk=1;	
+			acolor=PKGI_COLOR_TEXT_DIALOG;
+			break;
+        }
+		
     if (config.version_check)
     {	       
 		pkgi_start_thread("update_thread", &pkgi_update_check_thread);		
