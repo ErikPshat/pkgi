@@ -747,7 +747,7 @@ int main(int argc, const char* argv[])
         case 555: 
 			pkgi_snprintf(atxt, sizeof(atxt), _("Activation check disabled")); 
 			chk=1; 
-			acolor=PKGI_COLOR_TEXT_DIALOG; 
+			acolor=PKGI_COLOR_BATTERY_CHARGING; 
 			break;        
         default: 
 			pkgi_snprintf(atxt, sizeof(atxt), _("Active user: %d"), chk_act_dat()); 
