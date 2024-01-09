@@ -1,4 +1,4 @@
-msgid ""
+п»їmsgid ""
 msgstr ""
 "Project-Id-Version: PKGi PS3\n"
 "POT-Creation-Date: 2021-10-09 19:00-0300\n"
@@ -112,14 +112,14 @@ msgstr "Nessun elemento!"
 
 #: pkgi.c:462
 msgid "Item already installed, download again?"
-msgstr "Elemento gi… installato, scaricarlo di nuovo?"
+msgstr "Elemento giпїЅ installato, scaricarlo di nuovo?"
 
 #: pkgi.c:471 pkgi_download.c:372 pkgi_download.c:652
-msgid "Скачивание..."
+msgid "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ..."
 msgstr "Download in corso..."
 
 #: pkgi.c:471 pkgi.c:674
-msgid "Подготовка..."
+msgid "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ..."
 msgstr "Preparazione..."
 
 #: pkgi.c:504 pkgi.c:508
@@ -128,7 +128,7 @@ msgstr "Aggiornamento"
 
 #: pkgi.c:563 pkgi.c:567
 msgid "Count"
-msgstr "Quantit…"
+msgstr "QuantitпїЅ"
 
 #: pkgi.c:575
 msgid "Free"
@@ -193,11 +193,11 @@ msgstr "Download della lista fallito da"
 
 #: pkgi_db.c:159
 msgid "list is too large... check for newer pkgi version!"
-msgstr "La lista Љ troppo larga... verifica l'esistenza di una versione pi— recente di pkgi!"
+msgstr "La lista пїЅ troppo larga... verifica l'esistenza di una versione piпїЅ recente di pkgi!"
 
 #: pkgi_db.c:187
 msgid "list is empty... check the DB server"
-msgstr "La lista Љ vuota... verifica il server DB"
+msgstr "La lista пїЅ vuota... verifica il server DB"
 
 #: pkgi_db.c:390
 msgid "ERROR: pkgi.txt file(s) missing or bad config.txt file"
@@ -208,7 +208,7 @@ msgid "Content"
 msgstr "Contenuto"
 
 #: pkgi_dialog.c:108
-msgid "ОШИБКА!"
+msgid "пїЅпїЅпїЅпїЅпїЅпїЅ!"
 msgstr "ERRORE"
 
 #: pkgi_dialog.c:169
@@ -308,7 +308,7 @@ msgstr "Impossibile ripristinare il file"
 
 #: pkgi_download.c:562
 msgid "pkg integrity failed, try downloading again"
-msgstr "Integrit… del pkg non valida, provare a scaricarlo di nuovo"
+msgstr "IntegritпїЅ del pkg non valida, provare a scaricarlo di nuovo"
 
 #: pkgi_download.c:573
 msgid "Creating RAP file"
@@ -327,7 +327,7 @@ msgid "Resuming..."
 msgstr "Ripristino in corso..."
 
 #: pkgi_download.c:652
-msgid "Добавлена фоновая задача..."
+msgid "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ..."
 msgstr "Aggiunta del task in background..."
 
 #: pkgi_download.c:675
